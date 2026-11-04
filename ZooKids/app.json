@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "zooKids",
+    "slug": "zooKid",
+    "version": "1.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/img/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/img/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.luhenriq.zooKid"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "83efa6a6-dc78-4c61-99e1-a04f4e74bcc9"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/83efa6a6-dc78-4c61-99e1-a04f4e74bcc9"
+    },
+    "plugins": [
+      "expo-font",
+      "expo-audio",
+      "expo-video"
+    ]
+  }
+}

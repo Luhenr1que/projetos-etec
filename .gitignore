@@ -1,0 +1,11 @@
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Local tooling and generated files
+.DS_Store
+node_modules/
+.expo/
+.metadata/
+*.class

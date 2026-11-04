@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Agenda Next",
+    "slug": "agenda",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/img/icone.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/img/icone.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/img/icone.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.luhenriq.agenda"
+    },
+    "web": {
+      "favicon": "./assets/img/icone.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b9b972ba-45c1-4a2f-8db6-96fdacd9bb4f"
+      }
+    }
+  }
+}

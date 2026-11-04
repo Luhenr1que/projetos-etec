@@ -1,8 +1,11 @@
+<?php
+if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+if (!isset($_SESSION['nome'])) { header('Location: ../index.php'); exit; }
+?>
 
 <?php
-    $a = $_POST["select"];
+    $a = ($_POST["select"] ?? null);
 
-    session_start();
     $_SESSION["select"] = $a;
     if(isset($_POST["select"])){
     
@@ -26,25 +29,26 @@
     <title>Ditto</title>
     <link rel="icon" href="../img/pokeIcon.png">
     <link rel="stylesheet" href="../css/pokemons.css">
+<link rel="stylesheet" href="../css/quiz.css?v=2">
 </head>
 <body style="background-color: #A8A77A; --button-color: #A8A77A; --button-color-hover: #83825F;">
 <div class="box">
 
-<img src="../img/titulo.png" class="titulo">
-<h1>Como é a versão shine?</h1>
+<img src="../img/titulo.png" class="titulo" alt="Pokémon Quiz">
+<p class="eyebrow">PERGUNTA 02 / 10</p><progress value="1" max="10" aria-label="Perguntas concluídas"></progress><h1>Qual é a cor da versão shiny?</h1>
 <img class="imgPokemon" src="https://img.pokemondb.net/sprites/black-white/normal/ditto.png" alt="Ditto">
 
     <form class="form" method="post" action="../pokemons/blastoise.php">
-         <div class="text colorido"><input type="radio" class="radio" name="select" value="errado" required><label>Branco</label></div>
-         <div class="text colorido"><input type="radio" class="radio" name="select" value="errado" required><label>Vermelho</label></div>
-         <div class="text colorido"><input type="radio" class="radio" name="select" value="certo" required><label>Azul</label></div>
-         <div class="text colorido"><input type="radio" class="radio" name="select" value="errado" required><label>Laranja</label></div>
+         <div class="text colorido"><input type="radio" class="radio" name="select" value="errado" required id="answer-1"><label for="answer-1">Branco</label></div>
+         <div class="text colorido"><input type="radio" class="radio" name="select" value="errado" required id="answer-2"><label for="answer-2">Vermelho</label></div>
+         <div class="text colorido"><input type="radio" class="radio" name="select" value="certo" required id="answer-3"><label for="answer-3">Azul</label></div>
+         <div class="text colorido"><input type="radio" class="radio" name="select" value="errado" required id="answer-4"><label for="answer-4">Laranja</label></div>
     
-         <input  style="background-color: #A8A77A"  type="submit" value="Proximo" class="botao">
+         <input  style="background-color: #A8A77A"  type="submit" value="Confirmar resposta →" class="botao">
     </form>
 
 </div>
-</body>
+<a class="exit-link" href="../index.php">← Recomeçar jornada</a><script src="../js/quiz.js" defer></script></body>
 </html>
 
 

@@ -1,4 +1,8 @@
 <?php
+if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+if (!isset($_SESSION['nome'])) { header('Location: ../../index.php'); exit; }
+?>
+<?php
 
 ?>
 
@@ -10,24 +14,25 @@
     <title>Kyogre</title>
     <link rel="icon" href="../../img/pokeIcon.png">
     <link rel="stylesheet" href="../../css/pokemons.css">
+<link rel="stylesheet" href="../../css/quiz.css?v=2">
 </head>
 <body style="--button-color: #6390F0; --button-color-hover: #4D70BB;" class="backMar">
 <div class="box">
 
-<img src="../../img/titulo.png" class="titulo">
+<img src="../../img/titulo.png" class="titulo" alt="Pokémon Quiz">
 <h1>Um lendário apareceu!!!</h1>
-<h1>Como é a versão shine?</h1>
+<p class="eyebrow">ENCONTRO ESPECIAL</p><h1>Qual é a cor da versão shiny?</h1>
 <img class="imgPokemon" src="https://img.pokemondb.net/sprites/black-white/normal/kyogre.png" alt="Kyogre">
 
 <form class="form" method="post" action="../../index.php">
-         <div class="text colorido"><input type="radio" class="radio" name="selectW" value="false" required><label>Verde</label></div>
-         <div class="text colorido"><input type="radio" class="radio" name="selectW" value="false" required><label>Vermelho</label></div>
-         <div class="text colorido"><input type="radio" class="radio" name="selectW" value="false" required><label>Amarelo</label></div>
-         <div class="text colorido"><input type="radio" class="radio" name="selectW" value="certo" required><label>Rosa</label></div>
+         <div class="text colorido"><input type="radio" class="radio" name="selectW" value="false" required id="answer-1"><label for="answer-1">Verde</label></div>
+         <div class="text colorido"><input type="radio" class="radio" name="selectW" value="false" required id="answer-2"><label for="answer-2">Vermelho</label></div>
+         <div class="text colorido"><input type="radio" class="radio" name="selectW" value="false" required id="answer-3"><label for="answer-3">Amarelo</label></div>
+         <div class="text colorido"><input type="radio" class="radio" name="selectW" value="certo" required id="answer-4"><label for="answer-4">Rosa</label></div>
     
-         <input   style="background-color: #6390F0" type="submit" value="Proximo" class="botao">
+         <input   style="background-color: #6390F0" type="submit" value="Confirmar resposta →" class="botao">
     </form>
 
 </div>
-</body>
+<a class="exit-link" href="../../index.php">← Recomeçar jornada</a><script src="../../js/quiz.js" defer></script></body>
 </html>

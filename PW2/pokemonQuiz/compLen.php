@@ -1,6 +1,6 @@
 
 <?php
-    $a = $_POST["select"];
+    $a = ($_POST["select"] ?? null);
 
     session_start();
     $_SESSION["select"] = $a;

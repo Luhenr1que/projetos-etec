@@ -1,6 +1,6 @@
 <?php 
-    session_start();
-    $_SESSION["ramdom"] = 0;
+    if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+    $_SESSION = ['ramdom' => 0];
 ?>
 
 <!DOCTYPE html>
@@ -9,38 +9,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Pokémon Quiz</title>
     <link rel="icon" href="./img/pokeIcon.png">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="css/quiz.css?v=2">
 </head>
 
 <body>
     <div class="box">
 
-        <img src="./img/titulo.png" id="titulo">
+        <img src="./img/titulo.png" id="titulo" alt="Pokémon Quiz">
 
         <form action="./pokemons/arbok.php" method="post">
 
             <div id="nome">
-                <input type="text" name="nome" class="nomeText" placeholder="Qual o nome do seu treinador?" required maxlength="20">
+                <label class="name-label" for="trainer-name">Qual o nome do seu treinador?</label>
+                <input id="trainer-name" type="text" name="nome" class="nomeText" placeholder="Qual o nome do seu treinador?" required maxlength="20" pattern=".*\S.*" autocomplete="nickname">
             </div>
-            <div id="radio">
+            <fieldset class="trainer-choices"><legend>Escolha seu personagem</legend><div id="radio">
                 <label class="radio-label">
                     <input type="radio" name="opcao" value="male" class="radio-input" required >
-                    <img src="./img/male.png" alt="Imagem 1" class="radioImgM">
+                    <img src="./img/male.png" alt="Treinador" class="radioImgM">
                 </label>
 
                 <label class="radio-label">
                     <input type="radio" name="opcao" value="female" class="radio-input" required>
-                    <img src="./img/female.png" alt="Imagem 2" class="radioImgF">
+                    <img src="./img/female.png" alt="Treinadora" class="radioImgF">
                 </label>
-            </div>
+            </div></fieldset>
 
             <input type="submit" value="Iniciar" class="botao">
 
         </form>
     </div>
-    </div>
-</body>
+<script src="js/quiz.js" defer></script></body>
 
 </html>

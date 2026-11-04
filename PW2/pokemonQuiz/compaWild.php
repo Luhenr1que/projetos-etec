@@ -3,7 +3,7 @@ $ramdom = rand(1,30);
 
 session_start();
 $_SESSION["ramdom"] = $ramdom;
-$a = $_SESSION["selectW"];
+$a = ($_SESSION["selectW"] ?? null);
 if($a =="certo"){
     $_SESSION["pokewild"] = true;
 }

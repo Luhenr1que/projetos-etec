@@ -85,8 +85,8 @@ body {
 .radio-input:checked + .radioImgM,
 .radio-input:checked + .radioImgF {
   transform: scale(1.05);
-  border-color: #1976d2;
-  box-shadow: 0 0 0 8px rgba(25, 118, 210, 0.16);
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 8px rgba(211, 47, 47, 0.16);
 }
 
 .radio-input:checked + .radioImgM::after,
@@ -96,7 +96,7 @@ body {
   top: 10px;
   right: 10px;
   font-size: 34px;
-  color: #1976d2;
+  color: #d32f2f;
   font-weight: bold;
 }
 

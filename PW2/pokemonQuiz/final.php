@@ -1,5 +1,9 @@
 <?php
-    session_start();
+if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+if (!isset($_SESSION['nome'])) { header('Location: index.php'); exit; }
+?>
+<?php
+
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +15,7 @@
     <title>Resultado</title>
     <link rel="icon" href="./img/pokeIcon.png">
     <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="css/quiz.css?v=2">
 </head>
 
 
@@ -18,9 +23,9 @@
 <body>
     <div class="box">
 
-        <img src="./img/titulo.png" id="titulo">
+        <img src="./img/titulo.png" id="titulo" alt="Pokémon Quiz">
             
-            <div class="nome"><?php echo $_SESSION["nome"]; ?></div>
+            <p class="eyebrow">JORNADA CONCLUÍDA</p><h1 class="results-title">Sua coleção de acertos.</h1><div class="nome"><?php echo htmlspecialchars($_SESSION["nome"], ENT_QUOTES, "UTF-8"); ?></div>
 
             <div class="aprenseta"><?php 
 
@@ -182,13 +187,13 @@
                     }
             ?>
 
-        <form method="post" action="./compaWild.php">
-            <input style="background-color:rgb(207, 42, 42);" value="Denovo" type="submit" class="botao">
-        </form>
+        <form method="post" action="./index.php">
+            <input style="background-color:rgb(207, 42, 42);" value="Nova aventura" type="submit" class="botao">
+        </form><a class="section-link" href="compaWild.php">Tentar um encontro raro ✦</a>
     </div>
 
 
 
     </div>
-</body>
+<script src="js/quiz.js" defer></script></body>
 </html>

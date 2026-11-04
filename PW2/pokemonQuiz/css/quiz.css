@@ -1,0 +1,41 @@
+/* Ajustes leves sobre os estilos originais de cada página. */
+input, button { font: inherit; }
+a:focus-visible, input:focus-visible, button:focus-visible {
+    outline: 3px solid #1565c0;
+    outline-offset: 4px;
+}
+.name-label { display: block; margin-bottom: 12px; font-weight: 600; }
+.trainer-choices { border: 0; min-width: 0; }
+.trainer-choices legend { width: 100%; margin-bottom: 18px; color: #555; }
+.radio-label { position: relative; }
+.radio-input {
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    accent-color: #d32f2f;
+    z-index: 1;
+}
+.radioImgM, .radioImgF { object-fit: contain; }
+.radio-label:has(:focus-visible) { outline: 3px solid #1565c0; outline-offset: 5px; border-radius: 18px; }
+.text { position: relative; cursor: pointer; }
+.text label { flex: 1; padding: 4px 0; text-align: left; }
+.text:has(:checked) { outline: 3px solid #252525; outline-offset: 3px; }
+.text:has(:focus-visible) { outline: 3px solid #1565c0; outline-offset: 4px; }
+.eyebrow { font: 600 11px/1.6 'Segoe UI', sans-serif; letter-spacing: 2px; margin: 10px 0; color: #555; }
+progress { width: min(500px, 100%); height: 7px; margin: 8px 0 20px; accent-color: var(--button-color, #a33ea1); }
+.imgPokemon { image-rendering: pixelated; }
+.exit-link, .section-link { display: inline-block; margin: 18px 0; font: 14px/1.5 'Segoe UI', sans-serif; color: #34204e; text-underline-offset: 4px; }
+.results-title { font-size: 24px; margin: 10px 0 24px; }
+.botao:disabled { opacity: .7; cursor: wait; }
+#backLab { background-image: url('../img/backLab.png'); }
+.backMar { background-image: url('../img/backMar.png'); }
+@media (max-width: 520px) {
+    #radio { gap: 16px; }
+    .radioImgM, .radioImgF { width: 115px; height: 230px; }
+    .nome { font-size: 1.6rem; overflow-wrap: anywhere; }
+    .porcentagem { font-size: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

@@ -1,0 +1,52 @@
+.back{
+    background:linear-gradient( 90deg, #5360f2, #1eadd1, #5360f2);
+    background-size: 500% 100% ;
+    animation: anim 5s infinite linear alternate;
+}
+@keyframes anim{
+    0%{
+        background-position-x: 0%;
+    }
+    100%{
+        background-position-x: 100%;
+    }
+}
+
+.bot button{
+    border-radius: 10px;
+    margin: auto;
+    width: 500px;
+    height: 70px;
+    transition: all ease 0.5s;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 35px;
+    background-color: #ffffff;
+    opacity: 0.8;
+}
+.bot button:hover{
+    background-color: #eeeded;
+    width: 600px;
+    height: 80px;
+    opacity: 1;
+} 
+.titu{
+    font-size: 70px;
+    font-family:monospace;
+    padding: 30px 21% 0px 29%;
+    color: #ffffff;
+    margin: 10px auto;
+    margin-left: 4%;
+}
+.tudo{
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    justify-content: center;
+    font-family: monospace;
+}
+

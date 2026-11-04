@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylePrincipal.css">
+    <title>JapaTech</title>
+
+</head>
+<body>
+
+    <div class="boxEsc">
+    </div>
+
+    <div class="boxDir">
+
+        <div class="box">
+
+            <div class="logo"></div>
+
+            <form action="./index.php" method="post">
+
+                <h1>Nome</h1>
+                <input type="text" class="input" name="nome" required>
+
+                <h1>Email</h1>
+                <input type="text" class="input" name="email" required>
+
+                <h1>Defeito</h1>
+                <input type="text" class="input" name="defeito" required>
+
+                <h1>Modelo</h1>
+                <select name="marca" class="input">
+                    <option value="   "></option>
+                    <option value="Apple">Aplee</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                    <option value="Motorola">Motorola</option>
+                    <option value="Huawei">Huawei</option>
+                    <option value="OnePlus">OnePlus</option>
+                    <option value="Oppo">Oppo</option>
+                    <option value="Sony">Sony</option>
+                    <option value="LG">LG</option>
+                    <option value="Nokia">Nokia</option>
+                </select> 
+
+                <h1>Deseja receber informações por email?</h1>
+                <input type="radio" value="sim" class="inputRadio" name="noti" required>
+                <label> Sim </label>
+                <input type="radio" value="não" class="inputRadio" name="noti" required>
+                <label> Não </label>
+                <br>
+                <h1>Descreva o defeito</h1>
+                <textarea class="inputTextArea" name="desc" required></textarea>
+                <br>
+                <button class="botao">Gerar OG</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

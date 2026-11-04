@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container-slider{
+    display: flex;
+    width: 100%;
+    min-height: 50vh;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.imgslider{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 700px;
+}
+.slider{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 2s;
+}
+.on{
+    opacity: 1;
+}
+#voltar, #proximo{
+    width: 40px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+#voltar img, #proximo img{
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,97 @@
+.back{
+    background:linear-gradient( 90deg, #b75de0, #20e4da);
+    background-size: 500% 100% ;
+    animation: anim 5s infinite linear alternate;
+}
+@keyframes anim{
+    0%{
+        background-position-x: 0%;
+    }
+    100%{
+        background-position-x: 100%;
+    }
+}
+
+.container{
+
+    width: 100%;
+    height: 100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+
+}
+
+.box{
+    position: relative;
+    background-color: #ffffff;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    box-shadow: 5px 5px 20px #2a2a2b;
+    font-family: monospace;
+    font-size: 25px;
+    border-radius: 20px;
+    transition-duration: 0.5s;
+
+    .texto{
+        width: 400px;
+        height: 40px;
+        margin-top: 20px;
+        font-family: monospace;
+        font-size: 20px;
+        border-radius: 10px;
+        border-color: #d3d3d3;
+
+    }
+
+    .botao{
+        margin-top: 0px;
+        width: 200px;
+        height: 40px;
+        margin-top: 20px;
+        font-family: monospace;
+        font-size: 20px;
+        border-radius: 10px;
+        border-color: #606060;
+        color: #ffffff;
+        background: rgb(2,0,36);
+        background: linear-gradient(0deg, #ae00ffc5 0%,#406ddf 100%);
+        transition: 0.3s;
+        opacity: 0.9;
+        
+    }
+    
+    .botao:hover{
+        opacity: 1;
+        width: 230px;
+        height: 45px;
+    }
+
+    p{
+        font-size: 25px;
+        text-decoration: underline;
+        margin-left: 30px;
+        margin-right: 30px;
+        text-align: center;
+    }
+    
+    label{
+        margin-top: 20px;
+        background:linear-gradient( 90deg, #b75de0, #207be4);
+        background-size: 500% 100% ;
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: anim 5s infinite linear alternate;
+    }
+   
+
+    h6{
+        font-size: 30px;
+    }
+
+}

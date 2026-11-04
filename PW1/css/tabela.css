@@ -1,0 +1,15 @@
+body{
+    margin: 40px 50px 100px 50px;}
+    
+th{color: black;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;}
+
+table,th,tr{border: 2px;
+     border-color: black;
+      border-style:double; 
+      background-color: #6BCA91; 
+      border-spacing: 10px;} 
+
+.livros{width:220px; 
+        }

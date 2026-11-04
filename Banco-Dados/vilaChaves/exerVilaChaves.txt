@@ -1,0 +1,6 @@
+-- 1) Adicionar mais 5 ocupaçoes na tabela tbOcupacao;
+-- 2) Adicionar os campos e-mail, data de nascimento, sexo e estado civil na tabela de personagens;
+-- 3) Alterar o cpf  para 12 caracteres e o telefone para o 13 carateres. exemp: (cpf: 5511999999999) (tel:5511999999999)
+-- 4) Inserir mais 10 personagens na vila do chaves;
+-- 5) Atualizar os campos dos dados que extiverem 'null';
+-- 6) Remover os personagens Pernalonga, Patolino, Eufrasino, Bob Esponja e Lula Molusco;

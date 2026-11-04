@@ -1,0 +1,465 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px 20px;
+  background: linear-gradient(180deg, #fff9f2 0%, #ffc1e3 32%, #7b1fa2 82%);
+  font-family: 'Courier New', Courier, monospace;
+  color: #222;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.box {
+  width: min(900px, 100%);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 32px;
+  padding: 32px 26px 34px;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.16);
+  text-align: center;
+}
+
+#titulo {
+  display: block;
+  margin: 0 auto 22px;
+  width: min(90%, 340px);
+}
+
+.nome {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #3a0ca3;
+  margin-bottom: 18px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.porcentagem {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1b5e20;
+  margin-bottom: 24px;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+.aprenseta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: #2d2d2d;
+  margin-bottom: 22px;
+}
+
+.ImgM,
+.ImgF {
+  width: 110px;
+  height: auto;
+}
+
+.linha {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.botao {
+  margin: 24px auto 0;
+  display: block;
+  width: min(260px, 100%);
+  padding: 14px 22px;
+  border: none;
+  border-radius: 999px;
+  background-color: #d32f2f;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botao:hover {
+  transform: translateY(-2px);
+  background-color: #b71c1c;
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.14);
+}
+
+.on,
+.off,
+.dark,
+.blue,
+.arbok,
+.ditto,
+.blastoise,
+.charizard,
+.vennusar,
+.gengar,
+.gyaradus,
+.ninetales,
+.sandslash,
+.rapidash,
+.erroMew,
+.mew,
+.erroLugia,
+.lugia,
+.erroRayquaza,
+.rayquaza,
+.giratina,
+.arceus,
+.groudon,
+.kyogre,
+.dragonite {
+  width: 200px;
+  height: 200px;
+  border-radius: 28px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+}
+
+.on {
+  background-color: #e8f5e9;
+  border: 3px solid #4caf50;
+}
+
+.mew.on,
+.lugia.on,
+.rayquaza.on {
+  background-color: #fff8e1;
+  border: 3px solid #fbc02d;
+}
+
+.off {
+  background-color: #f3e5f5;
+  border: 3px solid #d81b60;
+  opacity: 0.8;
+}
+
+.dark {
+  background-color: #7b7b7b;
+  border: 3px solid #424242;
+}
+
+.blue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 1),
+    rgba(255, 176, 0, 1),
+    rgba(0, 240, 255, 1),
+    rgba(0, 111, 255, 1),
+    rgba(64, 0, 255, 1),
+    rgba(107, 0, 255, 1),
+    rgba(176, 0, 255, 1),
+    rgba(255, 0, 86, 1)
+  );
+  background-size: 800% 100%;
+  animation: backblue 5s alternate infinite;
+}
+
+.arbok {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/arbok.png");
+}
+
+.arbok:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/arbok.png");
+}
+
+.ditto {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/ditto.png");
+}
+
+.ditto:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/ditto.png");
+}
+
+.blastoise {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/blastoise.png");
+}
+
+.blastoise:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/blastoise.png");
+}
+
+.charizard {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/charizard.png");
+}
+
+.charizard:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/charizard.png");
+}
+
+.vennusar {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/venusaur-f.png");
+}
+
+.vennusar:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/venusaur-f.png");
+}
+
+.gengar {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/gengar.png");
+}
+
+.gengar:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/gengar.png");
+}
+
+.gyaradus {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/gyarados-f.png");
+}
+
+.gyaradus:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/gyarados-f.png");
+}
+
+.ninetales {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/ninetales.png");
+}
+
+.ninetales:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/ninetales.png");
+}
+
+.sandslash {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/sandslash.png");
+}
+
+.sandslash:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/sandslash.png");
+}
+
+.rapidash {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/rapidash.png");
+}
+
+.rapidash:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/rapidash.png");
+}
+
+.erroMew {
+  background-image: url(../img/mew.png);
+}
+
+.mew {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/mew.png");
+}
+
+.mew:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/mew.png");
+}
+
+.erroLugia {
+  background-image: url(../img/lugia.png);
+}
+
+.lugia {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/lugia.png");
+}
+
+.lugia:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/lugia.png");
+}
+
+.erroRayquaza {
+  background-image: url(../img/rayquaza.png);
+}
+
+.rayquaza {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/rayquaza.png");
+}
+
+.rayquaza:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/rayquaza.png");
+}
+
+.giratina {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/giratina-altered.png");
+}
+
+.giratina:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/giratina-altered.png");
+}
+
+.arceus {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/arceus-normal.png");
+}
+
+.arceus:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/arceus-normal.png");
+}
+
+.groudon {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/groudon.png");
+}
+
+.groudon:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/groudon.png");
+}
+
+.kyogre {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/kyogre.png");
+}
+
+.kyogre:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/kyogre.png");
+}
+
+.dragonite {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/shiny/dragonite.png");
+}
+
+.dragonite:hover {
+  background-image: url("https://img.pokemondb.net/sprites/black-white/normal/dragonite.png");
+}
+
+@keyframes backblue {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+@media (max-width: 780px) {
+  .box {
+    width: 100%;
+    padding: 22px 18px 24px;
+  }
+
+  .nome {
+    font-size: 2rem;
+    letter-spacing: 0.16em;
+  }
+
+  .porcentagem {
+    font-size: 1.75rem;
+  }
+
+  .aprenseta {
+    gap: 12px;
+    font-size: 1rem;
+  }
+
+  .ImgM,
+  .ImgF {
+    width: 90px;
+  }
+
+  .botao {
+    width: 100%;
+    padding: 16px 18px;
+  }
+
+  .linha {
+    gap: 14px;
+  }
+
+  .on,
+  .off,
+  .dark,
+  .blue,
+  .arbok,
+  .ditto,
+  .blastoise,
+  .charizard,
+  .vennusar,
+  .gengar,
+  .gyaradus,
+  .ninetales,
+  .sandslash,
+  .rapidash,
+  .erroMew,
+  .mew,
+  .erroLugia,
+  .lugia,
+  .erroRayquaza,
+  .rayquaza,
+  .giratina,
+  .arceus,
+  .groudon,
+  .kyogre,
+  .dragonite {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 520px) {
+  .box {
+    padding: 18px 14px 20px;
+  }
+
+  .nome {
+    font-size: 1.75rem;
+    letter-spacing: 0.14em;
+  }
+
+  .porcentagem {
+    font-size: 1.4rem;
+  }
+
+  .aprenseta {
+    font-size: 0.95rem;
+    gap: 10px;
+  }
+
+  .ImgM,
+  .ImgF {
+    width: 72px;
+  }
+
+  .botao {
+    padding: 14px 16px;
+  }
+
+  .linha {
+    gap: 12px;
+  }
+
+  .on,
+  .off,
+  .dark,
+  .blue,
+  .arbok,
+  .ditto,
+  .blastoise,
+  .charizard,
+  .vennusar,
+  .gengar,
+  .gyaradus,
+  .ninetales,
+  .sandslash,
+  .rapidash,
+  .erroMew,
+  .mew,
+  .erroLugia,
+  .lugia,
+  .erroRayquaza,
+  .rayquaza,
+  .giratina,
+  .arceus,
+  .groudon,
+  .kyogre,
+  .dragonite {
+    width: 110px;
+    height: 110px;
+  }
+}

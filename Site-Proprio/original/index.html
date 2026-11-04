@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./css/home.css">
+    <link rel="stylesheet" type="text/css" href="./css/home.css?v=3">
     <title>Meu primeiro site · Original</title>
 </head>
 <body>
@@ -23,16 +23,20 @@
     </nav>
 
     <main class="row">
-        <div class="coluna1">
-            <h2>Sobre mim</h2>
+        <section class="coluna1" aria-labelledby="sobre-mim">
+            <span class="section-label">01 / O COMEÇO</span>
+            <h2 id="sobre-mim">Sobre mim</h2>
             <p>Sou o Luis Henrique, e este foi meu primeiro experimento com programação web. Um espaço para aprender HTML e CSS, testar ideias e reunir algumas coisas de que gosto.</p>
-        </div>
+            <div class="study-tags" aria-label="Tecnologias do site"><span>HTML</span><span>CSS</span><span>Primeiras ideias</span></div>
+        </section>
 
-        <div class="coluna2">
-            <h2>Sobre as aulas</h2>
+        <section class="coluna2" aria-labelledby="sobre-aulas">
+            <span class="section-label">02 / APRENDENDO NA PRÁTICA</span>
+            <h2 id="sobre-aulas">Sobre as aulas</h2>
             <p>Este site nasceu nas aulas de programação web. Cada página foi uma oportunidade de praticar: organizar horários, explorar listas e tabelas e criar meus primeiros formulários.</p>
+            <a class="section-link" href="inicio.html">Conhecer as páginas →</a>
 
-        </div>
+        </section>
 
     </main>
     

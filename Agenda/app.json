@@ -24,7 +24,9 @@
       "package": "com.luhenriq.agenda"
     },
     "web": {
-      "favicon": "./assets/img/icone.png"
+      "favicon": "./assets/img/icone.png",
+      "bundler": "metro",
+      "output": "single"
     },
     "extra": {
       "eas": {

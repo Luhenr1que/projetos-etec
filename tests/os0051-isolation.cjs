@@ -1,0 +1,54 @@
+const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const { createDemoServer } = require('../scripts/demo-server.cjs');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+(async () => {
+ const server=createDemoServer();await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+ const origin=`http://127.0.0.1:${server.address().port}`;
+ const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
+ const report={test:'Agenda e ZooKids no mesmo origin e contexto de navegador',status:'passed',errors:[]};
+ try {
+  const page=await browser.newPage({viewport:{width:390,height:844}});page.setDefaultTimeout(15000);
+  page.on('pageerror',error=>report.errors.push(error.message));
+  await page.goto(origin+'/demos/agenda/cadastro');
+  await page.getByPlaceholder('Digite seu nome').fill('Pessoa Agenda');
+  await page.getByPlaceholder('dd/mm/aaaa').fill('01012000');
+  await page.getByPlaceholder('Crie uma senha').fill('1234');
+  await page.getByText('Concluir',{exact:true}).click();
+  await page.getByRole('button',{name:'Adicionar recebimento'}).click();
+  await page.getByPlaceholder('Descrição',{exact:true}).fill('Registro isolado');
+  await page.getByPlaceholder('Valor',{exact:true}).fill('5000');
+  await page.getByPlaceholder('Data',{exact:true}).fill('06112026');
+  await page.getByPlaceholder('Hora',{exact:true}).fill('1200');
+  await page.getByText('Salvar',{exact:true}).click();
+  await page.getByText('Registro isolado',{exact:true}).waitFor({state:'visible'});
+  const agenda=await page.evaluate(()=>({users:localStorage.getItem('os005:agenda:usuarios'),records:localStorage.getItem('os005:agenda:dados')}));
+  await page.goto(origin+'/demos/zookids/cadastro');
+  await page.getByPlaceholder('Digite seu nome').fill('Pessoa Zoo');
+  await page.getByPlaceholder('dd/mm/aaaa').fill('01012000');
+  await page.getByRole('textbox',{name:'Digite seu email',exact:true}).fill('zoopessoa@example.test');
+  await page.getByPlaceholder('Crie uma senha').fill('demo1234');
+  await page.getByRole('button',{name:'Continuar cadastro'}).click();
+  await page.getByRole('button',{name:'Ícone 2',exact:true}).click();
+  await page.getByRole('button',{name:'Salvar cadastro',exact:true}).click();
+  await page.getByRole('button',{name:'Confirmar login'}).waitFor({state:'visible'});
+  await page.getByRole('textbox',{name:'Digite seu email',exact:true}).fill('zoopessoa@example.test');
+  await page.getByPlaceholder('Digite sua senha').fill('demo1234');
+  await page.getByRole('button',{name:'Confirmar login'}).click();
+  await page.getByRole('button',{name:'Território 1',exact:true}).waitFor({state:'visible'});
+  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('os005:zookids:usuarios'))[0].nome),'Pessoa Zoo');
+  await page.getByRole('button',{name:'Abrir menu'}).click();
+  await page.getByText('Logout',{exact:true}).click();
+  await page.getByRole('button',{name:'Entrar',exact:true}).waitFor({state:'visible'});
+  const after=await page.evaluate(()=>({users:localStorage.getItem('os005:agenda:usuarios'),records:localStorage.getItem('os005:agenda:dados'),zoo:localStorage.getItem('os005:zookids:usuarios')}));
+  assert.equal(after.users,agenda.users);assert.equal(after.records,agenda.records);assert.equal(after.zoo,null);
+  await page.goto(origin+'/demos/agenda/home');
+  await page.getByText('Olá, Pessoa Agenda',{exact:true}).waitFor({state:'visible'});
+  await page.getByText('Registro isolado',{exact:true}).waitFor({state:'visible'});
+  assert.deepEqual(report.errors,[]);report.agendaPreserved=true;report.zooReset=true;
+ } catch(error){report.status='failed';report.failure=error.stack;process.exitCode=1;}
+ finally {await browser.close();server.close();}
+ fs.writeFileSync(path.resolve(__dirname,'../docs/evidencias/OS-005.1/isolation.json'),JSON.stringify(report,null,2)+'\n');
+ console.log(report.status+': isolamento entre apps'+(report.failure?'\n'+report.failure:''));
+})().catch(error=>{console.error(error);process.exitCode=1});

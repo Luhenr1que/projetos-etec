@@ -1,3 +1,7 @@
+import { useAudio } from '../../../audioContext';
+import { isDemo } from '../../../demoMode';
+import { profilePhoto } from '../../../profilePhoto';
+import { Alert } from '../../../alerts';
 import React, { useState, useEffect } from 'react';
 import { 
     View, 
@@ -8,12 +12,11 @@ import {
     TouchableOpacity,
     Modal,
     TextInput,
-    Alert,
     ActivityIndicator,
     Linking
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import axios from 'axios';
+import axios from '../../../demoHttp';
 import { useTheme } from '../../../themeContext';
 import getStyles from './style';
 import { Ionicons, MaterialCommunityIcons, FontAwesome6, FontAwesome5, MaterialIcons } from '@expo/vector-icons';
@@ -22,6 +25,7 @@ import { useApi, STORAGE_URL } from '../../../crud'; // Importe STORAGE_URL
 const { width } = Dimensions.get('window');
 
 export default function Home({ navigation }) {
+    const { playSomBot } = useAudio();
     const { isDarkMode } = useTheme();
     const styles = getStyles(isDarkMode);
     const [menuAberto, setMenuAberto] = useState(false);
@@ -51,7 +55,7 @@ export default function Home({ navigation }) {
         try {
             const userData = await getUserData();
             if (userData && userData.fotoPerfil) {
-                const fotoUrl = `${STORAGE_URL}/${userData.fotoPerfil}`;
+                const fotoUrl = profilePhoto(userData.fotoPerfil);
                 console.log('📸 Carregando foto:', fotoUrl);
                 setFotoPerfil(fotoUrl);
             } else {
@@ -147,7 +151,7 @@ export default function Home({ navigation }) {
 
                 // Carrega a foto se existir
                 if (paciente.fotoPerfil) {
-                    const fotoUrl = `${STORAGE_URL}/${paciente.fotoPerfil}`;
+                    const fotoUrl = profilePhoto(paciente.fotoPerfil);
                     console.log('📸 Foto do perfil:', fotoUrl);
                     setFotoPerfil(fotoUrl);
                 } else {
@@ -315,10 +319,12 @@ export default function Home({ navigation }) {
 
     const navegarParaTela = (tela) => {
         setMenuAberto(false);
-        navigation.navigate(tela);
+        if (['Login', 'Cadastro', 'Home', 'Meditacao', 'Alimentacao', 'MapaMercados'].includes(tela)) navigation.navigate(tela);
+        else Alert.alert('Recurso indisponível', 'Esta tela ainda não foi implementada no projeto acadêmico original.');
     };
 
     const discarEmergencia = () => {
+        if (isDemo) { Alert.alert('Demonstração', 'Este botão é ilustrativo. A demo não realiza chamadas.'); return; }
         const numeroEmergencia = '192';
         Alert.alert(
             'Discar Emergência',
@@ -337,6 +343,7 @@ export default function Home({ navigation }) {
     };
 
     const handleBotaoPress = (botao) => {
+        playSomBot();
         if (botao.acao === 'emergencia') {
             discarEmergencia();
         } else if (botao.acao === 'abrirPerfil') {
@@ -360,7 +367,7 @@ export default function Home({ navigation }) {
                 <View style={styles.navbarRight}>
                     {/* Foto de perfil pequena */}
                     {fotoPerfil ? (
-                        <TouchableOpacity 
+                        <TouchableOpacity accessibilityRole="button"
                             style={styles.fotoPerfilPequena}
                             onPress={abrirModalPerfil}
                         >
@@ -370,7 +377,7 @@ export default function Home({ navigation }) {
                             />
                         </TouchableOpacity>
                     ) : (
-                        <TouchableOpacity 
+                        <TouchableOpacity accessibilityRole="button"
                             style={styles.fotoPerfilPlaceholder}
                             onPress={abrirModalPerfil}
                         >
@@ -378,9 +385,9 @@ export default function Home({ navigation }) {
                         </TouchableOpacity>
                     )}
 
-                    <TouchableOpacity
+                    <TouchableOpacity accessibilityRole="button"
                         style={styles.menuButton}
-                        onPress={toggleMenu}
+                        accessibilityLabel="Abrir menu" onPress={toggleMenu}
                     >
                         <Ionicons
                             name={menuAberto ? "close" : "menu"}
@@ -413,7 +420,7 @@ export default function Home({ navigation }) {
                         </Text>
                     </View>
 
-                    <TouchableOpacity
+                    <TouchableOpacity accessibilityRole="button"
                         style={styles.menuItem}
                         onPress={() => abrirModalPerfil()}
                     >
@@ -421,7 +428,7 @@ export default function Home({ navigation }) {
                         <Text style={styles.menuItemText}>Meu Perfil</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity
+                    <TouchableOpacity accessibilityRole="button"
                         style={styles.menuItem}
                         onPress={() => navegarParaTela('Configuracoes')}
                     >
@@ -429,7 +436,7 @@ export default function Home({ navigation }) {
                         <Text style={styles.menuItemText}>Configurações</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity
+                    <TouchableOpacity accessibilityRole="button"
                         style={styles.menuItem}
                         onPress={() => navegarParaTela('Historico')}
                     >
@@ -437,7 +444,7 @@ export default function Home({ navigation }) {
                         <Text style={styles.menuItemText}>Histórico</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity
+                    <TouchableOpacity accessibilityRole="button"
                         style={styles.menuItem}
                         onPress={() => {logoutPaciente(), navigation.replace('Login');}}
                     >
@@ -460,7 +467,7 @@ export default function Home({ navigation }) {
 
                     <View style={styles.gradeContainer}>
                         {botoesGrade.map((botao) => (
-                            <TouchableOpacity
+                            <TouchableOpacity accessibilityRole="button"
                                 key={botao.id}
                                 style={styles.botaoGrade}
                                 onPress={() => handleBotaoPress(botao)}
@@ -515,7 +522,7 @@ export default function Home({ navigation }) {
                                 )}
                                 <Text style={styles.modalTitulo}>Meu Perfil</Text>
                             </View>
-                            <TouchableOpacity 
+                            <TouchableOpacity accessibilityRole="button"
                                 style={styles.modalFechar}
                                 onPress={fecharModalPerfil}
                             >
@@ -620,7 +627,7 @@ export default function Home({ navigation }) {
 
                         {/* Footer do Modal */}
                         <View style={styles.modalFooter}>
-                            <TouchableOpacity 
+                            <TouchableOpacity accessibilityRole="button"
                                 style={styles.botaoCancelar}
                                 onPress={fecharModalPerfil}
                                 disabled={salvando}
@@ -628,7 +635,7 @@ export default function Home({ navigation }) {
                                 <Text style={styles.botaoCancelarTexto}>Cancelar</Text>
                             </TouchableOpacity>
                             
-                            <TouchableOpacity 
+                            <TouchableOpacity accessibilityRole="button"
                                 style={[styles.botaoSalvar, salvando && styles.botaoDesabilitado]}
                                 onPress={salvarPerfil}
                                 disabled={salvando}

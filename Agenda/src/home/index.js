@@ -2,7 +2,7 @@ import styles from './style.js';
 import { useNavigation } from '@react-navigation/native';
 import { useEffect, useState} from 'react';
 import { ImageBackground, Pressable, Text, View, Image, Modal,TextInput,FlatList,KeyboardAvoidingView,Platform} from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '../../storage';
 
 export default function Home (){
       const navigation = useNavigation();
@@ -376,7 +376,7 @@ const abrirModalEdicao = (item, index) => {
                       <View style={{ flexDirection: 'row', justifyContent: 'space-between',gap:'50%', }}>
                         
                         {/* Ícone perfil no canto esquerdo */}
-                        <Pressable onPress={() => setShowPerfil(true)}>
+                        <Pressable accessibilityRole="button" accessibilityLabel="Mostrar perfil" onPress={() => setShowPerfil(true)}>
                           <Image
                             source={require('../../assets/img/perfil.png')}
                             style={{ width: 60, height: 60, tintColor: '#fff' }}
@@ -385,7 +385,7 @@ const abrirModalEdicao = (item, index) => {
 
                         {/* Container dos dois ícones no canto direito */}
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                          <Pressable onPress={() => setSaldoVisivel(!saldoVisivel)}>
+                          <Pressable accessibilityRole="button" accessibilityLabel="Mostrar ou ocultar saldo" onPress={() => setSaldoVisivel(!saldoVisivel)}>
                             <Image
                               source={
                                 saldoVisivel
@@ -396,7 +396,7 @@ const abrirModalEdicao = (item, index) => {
                             />
                           </Pressable>
 
-                          <Pressable onPress={() => setMDelete(true)}>
+                          <Pressable accessibilityRole="button" accessibilityLabel="Excluir todos os lançamentos" onPress={() => setMDelete(true)}>
                             <Image
                               source={require('../../assets/img/lixeira.png')}
                               style={{ width: 30, height: 40, tintColor: '#fff' }}
@@ -426,7 +426,7 @@ const abrirModalEdicao = (item, index) => {
                         const originalIndex = dados.length - 1 - index;
                         return (
                           <View style={styles.cardBox}> 
-                            <Pressable onPress={()=>abrirModalEdicao(item,originalIndex)} style={styles.card}>
+                            <Pressable accessibilityRole="button" onPress={()=>abrirModalEdicao(item,originalIndex)} style={styles.card}>
                               {/* Descrição no topo */}
                               <Text style={styles.cardTextDesc}>{item.desc}</Text>
 
@@ -456,15 +456,15 @@ const abrirModalEdicao = (item, index) => {
                     />
                       </View>
                     </View>
-                    <Pressable style={styles.plusA} onPress={()=> newCard('+')}>
+                    <Pressable accessibilityRole="button" accessibilityLabel="Adicionar recebimento" style={styles.plusA} onPress={()=> newCard('+')}>
                           <Image style={styles.plus} source={require('../../assets/img/yes.png')}></Image>
                     </Pressable>
-                    <Pressable style={styles.plusB} onPress={()=> newCard('-')}>
+                    <Pressable accessibilityRole="button" accessibilityLabel="Adicionar pagamento" style={styles.plusB} onPress={()=> newCard('-')}>
                           <Image style={styles.plus} source={require('../../assets/img/no.png')}></Image>
                     </Pressable>    
 
                   <Modal animationType='fade' transparent={true} visible={m}>
-                   <Pressable onPress={()=>{setM(false), setFormData({desc: "",valor: "",data: "",hora: "",mOn: ""});}}>
+                   <Pressable accessibilityRole="button" onPress={()=>{setM(false), setFormData({desc: "",valor: "",data: "",hora: "",mOn: ""});}}>
                     <View style={styles.modalA}>
                        
                         <View style={styles.modalBox}>
@@ -480,7 +480,7 @@ const abrirModalEdicao = (item, index) => {
                             <TextInput placeholder="Data" style={styles.inputA} placeholderTextColor="rgba(0, 0, 0, 0.3)" minLength={10} maxLength={10} keyboardType="numeric" onChangeText={formatarData} value={formData.data}/>
                             <TextInput placeholder="Hora" style={styles.inputA} placeholderTextColor="rgba(0, 0, 0, 0.3)" minLength={5} maxLength={5} keyboardType="numeric" onChangeText={formatarHora} value={formData.hora}/>
                           </View>
-                          <Pressable style={{ backgroundColor: '#00d14d', paddingHorizontal: 30,paddingVertical:15, borderRadius: 10,borderWidth:2, textAlign:'center', marginRight: 10}} onPress={()=>cadastrar()}><Text style={{ color: '#fff',  fontSize:20, }}>Salvar</Text></Pressable>
+                          <Pressable accessibilityRole="button" style={{ backgroundColor: '#00d14d', paddingHorizontal: 30,paddingVertical:15, borderRadius: 10,borderWidth:2, textAlign:'center', marginRight: 10}} onPress={()=>cadastrar()}><Text style={{ color: '#fff',  fontSize:20, }}>Salvar</Text></Pressable>
                         </View>
                       </View>
                     </View>
@@ -488,7 +488,7 @@ const abrirModalEdicao = (item, index) => {
                   </Modal>
 
                   <Modal animationType='fade' transparent={true} visible={mAviso}>
-                        <Pressable onPress={()=>{setMAviso(false),setFormData({desc: "",valor: "",data: "",hora: "",mOn: ""});}} style={styles.modalA}>
+                        <Pressable accessibilityRole="button" onPress={()=>{setMAviso(false),setFormData({desc: "",valor: "",data: "",hora: "",mOn: ""});}} style={styles.modalA}>
                               <View style={styles.modalA}>
                                     <View style={styles.modalBox}>
                                           <Text style={styles.titulo}>{Aviso}</Text>
@@ -499,7 +499,7 @@ const abrirModalEdicao = (item, index) => {
 
 
                   <Modal animationType='fade' transparent={true} visible={showPerfil}>
-                        <Pressable style={styles.modalA} onPress={()=>{setShowPerfil(false),setFormData({desc: "",valor: "",data: "",hora: "",mOn: ""});}} >
+                        <Pressable accessibilityRole="button" style={styles.modalA} onPress={()=>{setShowPerfil(false),setFormData({desc: "",valor: "",data: "",hora: "",mOn: ""});}} >
                                     <View style={styles.modalBoxP}>
                                           <Text style={styles.titulo}>{usuario.nome}</Text>
                                           <Text style={styles.titulo}>{usuario.dataNasc}</Text>
@@ -508,14 +508,14 @@ const abrirModalEdicao = (item, index) => {
                   </Modal>
 
                   <Modal animationType='fade' transparent={true} visible={mDelete}>
-                        <Pressable style={styles.modalA} onPress={()=>{setMDelete(false),setFormData({desc: "",valor: "",data: "",hora: "",mOn: ""});}}>
+                        <Pressable accessibilityRole="button" style={styles.modalA} onPress={()=>{setMDelete(false),setFormData({desc: "",valor: "",data: "",hora: "",mOn: ""});}}>
                                     <View style={styles.modalBoxDelete}>
                                           <Text style={{ fontSize: 26, fontWeight: 'bold', color: '#fff', textAlign: 'center', marginVertical: 20 }}>Deseja deletar todas as informações?</Text>
                                           <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }}>
-                                            <Pressable onPress={() => {setMDelete(false);apagarDados()}} style={{ backgroundColor: '#d10000', paddingHorizontal: 30,paddingVertical:15, borderRadius: 10,borderWidth:2, textAlign:'center', marginRight: 10 }}>
+                                            <Pressable accessibilityRole="button" onPress={() => {setMDelete(false);apagarDados()}} style={{ backgroundColor: '#d10000', paddingHorizontal: 30,paddingVertical:15, borderRadius: 10,borderWidth:2, textAlign:'center', marginRight: 10 }}>
                                               <Text style={{ color: '#fff', fontWeight: 'bold', fontSize:20, }}>Sim</Text>
                                             </Pressable>
-                                            <Pressable onPress={()=>{setMDelete(false)}} style={{ backgroundColor: '#00d14d', paddingHorizontal: 30,paddingVertical:15, borderRadius: 10,borderWidth:2, textAlign:'center', marginRight: 10}}>
+                                            <Pressable accessibilityRole="button" onPress={()=>{setMDelete(false)}} style={{ backgroundColor: '#00d14d', paddingHorizontal: 30,paddingVertical:15, borderRadius: 10,borderWidth:2, textAlign:'center', marginRight: 10}}>
                                               <Text style={{ color: '#fff', fontWeight: 'bold', fontSize:20, }}>Não</Text>
                                             </Pressable>
                                           </View>
@@ -524,7 +524,7 @@ const abrirModalEdicao = (item, index) => {
                   </Modal>
 
                   <Modal animationType='fade' transparent={true} visible={mEditar}>
-                      <Pressable style={styles.modalA} onPress={()=>{setMEditar(false),setFormData({desc: "",valor: "",data: "",hora: "",mOn: ""});}}>
+                      <Pressable accessibilityRole="button" style={styles.modalA} onPress={()=>{setMEditar(false),setFormData({desc: "",valor: "",data: "",hora: "",mOn: ""});}}>
                       <View style={styles.modalBox}>
                         <Text style={{ fontSize: 30, fontWeight: 'bold', color: msg === 'Recebido' ? '#00d14d' : '#d10000',fontSize:35 ,textAlign: 'center', marginBottom: 20, textShadowColor: 'rgba(0, 0, 0, 0.2)', textShadowOffset: { width: 1, height: 1 }, textShadowRadius: 3, textTransform: 'capitalize' }}>{msg}</Text>
                         <View style={styles.TArea}>
@@ -539,10 +539,10 @@ const abrirModalEdicao = (item, index) => {
                             <TextInput placeholder="Hora" style={styles.inputA} placeholderTextColor="rgba(0, 0, 0, 0.3)" minLength={5} maxLength={5} keyboardType="numeric" onChangeText={formatarHoraEditar} value={formData.hora}/>
                           </View>
                           <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 0 }}>
-                            <Pressable onPress={salvarEdicao} style={{ backgroundColor: '#00d14d',paddingHorizontal: 30,paddingVertical:15, borderRadius: 10,borderWidth:2, textAlign:'center', marginRight: 10}}>
+                            <Pressable accessibilityRole="button" onPress={salvarEdicao} style={{ backgroundColor: '#00d14d',paddingHorizontal: 30,paddingVertical:15, borderRadius: 10,borderWidth:2, textAlign:'center', marginRight: 10}}>
                               <Text style={{ color: '#fff', fontWeight: 'bold', fontSize:20, }}>Salvar</Text>
                             </Pressable>
-                            <Pressable onPress={() => deletarItem(indexEditar)} style={{ backgroundColor: '#d10000', paddingHorizontal: 30,paddingVertical:15, borderRadius: 10,borderWidth:2, textAlign:'center', marginRight: 10 }}>
+                            <Pressable accessibilityRole="button" onPress={() => deletarItem(indexEditar)} style={{ backgroundColor: '#d10000', paddingHorizontal: 30,paddingVertical:15, borderRadius: 10,borderWidth:2, textAlign:'center', marginRight: 10 }}>
                               <Text style={{ color: '#fff', fontWeight: 'bold', fontSize:20, }}>Deletar</Text>
                             </Pressable>
                           </View>

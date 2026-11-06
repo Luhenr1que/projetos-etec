@@ -73,51 +73,16 @@ export const AudioProvider = ({ children }) => {
     }
   };
 
-  const playSomBot = async () => {
+  // Short authored CC0 effects replace missing originals.
+  const playEffect = async source => {
+    setUserInteracted(true);
     try {
-      if (!userInteracted) {
-        setUserInteracted(true);
-      }
-
-      const { sound: som } = await Audio.Sound.createAsync(
-        require('./assets/music/botao.mp3'),
-        { volume: 0.7 }
-      );
-
-      await som.playAsync();
-
-      som.setOnPlaybackStatusUpdate((status) => {
-        if (status.didJustFinish) {
-          som.unloadAsync();
-        }
-      });
-    } catch (e) {
-      console.error('Erro no som do botão:', e);
-    }
+      const { sound } = await Audio.Sound.createAsync(source, { shouldPlay: true, volume: 0.25 });
+      sound.setOnPlaybackStatusUpdate(status => { if (status.didJustFinish) sound.unloadAsync(); });
+    } catch { /* Optional effect: navigation remains available if audio is unavailable. */ }
   };
-
-  const playSomBotCode = async () => {
-    try {
-      if (!userInteracted) {
-        setUserInteracted(true);
-      }
-
-      const { sound: som } = await Audio.Sound.createAsync(
-        require('./assets/music/botCode.mp3'),
-        { volume: 0.7 }
-      );
-
-      await som.playAsync();
-
-      som.setOnPlaybackStatusUpdate((status) => {
-        if (status.didJustFinish) {
-          som.unloadAsync();
-        }
-      });
-    } catch (e) {
-      console.error('Erro no som do botão (Code):', e);
-    }
-  };
+  const playSomBot = () => playEffect(require('./assets/music/botao.wav'));
+  const playSomBotCode = () => playEffect(require('./assets/music/botCode.wav'));
 
   // Limpeza ao desmontar
   useEffect(() => {

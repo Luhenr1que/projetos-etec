@@ -1,0 +1,35 @@
+
+> pitaia@1.0.0 build:web
+> expo export --platform web --max-workers 2
+
+
+Using (experimental) base path: /demos/horoscopo
+Starting Metro Bundler
+| (node:35293) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Web Bundled 267ms index.js (322 modules)
+
+› Assets (13):
+assets/img/aquario.b53f337583b85e23564aadd1893da7e2.png (24.5 kB)
+assets/img/ares.9c466f9d4e511d270a99bb4321b0a98d.png (25.6 kB)
+assets/img/cancer.3c53aca92a7a3c61c54f4678eba6ca86.png (26.4 kB)
+assets/img/capricornio.301a003b16ba4ec7f330161d0f0de097.png (26.2 kB)
+assets/img/escorpiao.b7b7635e78fd238f7332d54e06787069.png (24.1 kB)
+assets/img/gemeos.6737e709a6b65f2a139b6ef828e2abf0.png (23.6 kB)
+assets/img/horos.dec8c5f69bfb657cf470af7b48b9dfdb.png (10.8 kB)
+assets/img/leao.a41b43c6bc580e4ab39698ae0415fb0f.png (26.3 kB)
+assets/img/libra.b6d6d9061fe93d7bdff03519ae845dde.png (23.1 kB)
+assets/img/peixes.d5f3e8ab331c770a565ebad70df8fd7c.png (24.8 kB)
+assets/img/sargitario.a9f2d09fab59c4a77ec27ac8cfc7fb7d.png (22 kB)
+assets/img/touro.9cbf6177ab6b42830478b58a621b9a75.png (26.5 kB)
+assets/img/virgem.635911587d119d7b933ff9b9cfabf5f9.png (25.2 kB)
+
+› web bundles (1):
+_expo/static/js/web/index-edcc34fda1f3f52ae0c0229c72379e3a.js (521 kB)
+
+› Files (3):
+favicon.ico (14.5 kB)
+index.html (1.21 kB)
+metadata.json (49 B)
+
+Exported: dist

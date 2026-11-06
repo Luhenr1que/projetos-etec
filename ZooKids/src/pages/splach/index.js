@@ -2,8 +2,8 @@ import { View, Image, ActivityIndicator} from 'react-native';
 import styles from './style.js';
 import { useNavigation } from '@react-navigation/native';
 import { useEffect} from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useAudio } from '../../../audioContext.js';
+import AsyncStorage from '../../../storage';
+import { useAudio } from '../../../audioContext';
 
 export default function Splach() {
   const navigation = useNavigation();

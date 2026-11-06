@@ -41,13 +41,13 @@
         "android.permission.ACCESS_FINE_LOCATION"
       ],
       "config": {
-        "googleMaps": {
-          "apiKey": "AIzaSyDZT6L5dg7t0mT8ojkwi8V7mASZYGCcSIY"
-        }
+        "googleMaps": {}
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single"
     }
   }
 }

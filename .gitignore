@@ -9,3 +9,13 @@ node_modules/
 .expo/
 .metadata/
 *.class
+
+# Independent Expo web exports
+**/dist/
+**/dist-native/
+**/dist-debug/
+
+# OS-005.1 staging local
+/artifacts/
+
+**/dist-audit/

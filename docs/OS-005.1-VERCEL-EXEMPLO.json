@@ -1,0 +1,87 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/(fonts|img)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/((?!demos/medlive(?:/|$)).*)",
+      "headers": [
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    },
+    {
+      "source": "/demos/medlive/:path*",
+      "headers": [
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(self), microphone=(), geolocation=(self)"
+        }
+      ]
+    },
+    {
+      "source": "/demos/:app/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/demos/termo",
+      "destination": "/demos/termo/index.html"
+    },
+    {
+      "source": "/demos/termo/:path((?!assets(?:/|$)|_expo(?:/|$))(?!.*\\.).*)",
+      "destination": "/demos/termo/index.html"
+    },
+    {
+      "source": "/demos/agenda",
+      "destination": "/demos/agenda/index.html"
+    },
+    {
+      "source": "/demos/agenda/:path((?!assets(?:/|$)|_expo(?:/|$))(?!.*\\.).*)",
+      "destination": "/demos/agenda/index.html"
+    },
+    {
+      "source": "/demos/zookids",
+      "destination": "/demos/zookids/index.html"
+    },
+    {
+      "source": "/demos/zookids/:path((?!assets(?:/|$)|_expo(?:/|$))(?!.*\\.).*)",
+      "destination": "/demos/zookids/index.html"
+    },
+    {
+      "source": "/demos/medlive",
+      "destination": "/demos/medlive/index.html"
+    },
+    {
+      "source": "/demos/medlive/:path((?!assets(?:/|$)|_expo(?:/|$))(?!.*\\.).*)",
+      "destination": "/demos/medlive/index.html"
+    }
+  ]
+}

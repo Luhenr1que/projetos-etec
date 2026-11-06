@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-11-06T19:05:26.524Z",
+  "results": [
+    {
+      "app": "termo",
+      "basePath": "/demos/termo",
+      "command": "npm run build:web -- --max-workers 2",
+      "exitCode": 0,
+      "status": "passed",
+      "artifact": "termo/dist/"
+    },
+    {
+      "app": "medlive-template",
+      "basePath": "/_preservacao/medlive-template",
+      "command": "npm run build:web -- --max-workers 2",
+      "exitCode": 0,
+      "status": "passed",
+      "artifact": "MedLive/dist/"
+    },
+    {
+      "app": "zookids",
+      "basePath": "/demos/zookids",
+      "command": "npm run build:web -- --max-workers 2",
+      "exitCode": 0,
+      "status": "passed",
+      "artifact": "ZooKids/dist/"
+    },
+    {
+      "app": "agenda",
+      "basePath": "/demos/agenda",
+      "command": "npm run build:web -- --max-workers 2",
+      "exitCode": 0,
+      "status": "passed",
+      "artifact": "Agenda/dist/"
+    },
+    {
+      "app": "medlive",
+      "basePath": "/demos/medlive",
+      "command": "npm run build:web -- --max-workers 2",
+      "exitCode": 0,
+      "status": "passed",
+      "artifact": "medLiveProjeto/medLive/dist/"
+    }
+  ]
+}

@@ -1,14 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { Picker, Text, View, ImageBackground, Pressable,Modal} from 'react-native';
+import { Image, Text, View, ImageBackground, Pressable,Modal, ScrollView} from 'react-native';
 import styles from './style';
 import { useState } from 'react';
-import { Image } from 'react-native-web';
+import { Picker } from '@react-native-picker/picker';
+import { getSignIndex } from './zodiac';
 
 export default function App() {
 
   const [aparecer,setaparecer] = useState(false);
   const [aparecerErro,setAparecerErro] = useState(false)
-  const [dia,setDia] = useState(0);
+  const [dia,setDia] = useState('');
   const [mes,setMes] = useState("");
   const [signo,setSigno] = useState(0);
 
@@ -70,7 +71,7 @@ export default function App() {
       elemento:'Elemento Água (Emoções, intuição, sensibilidade)',
     },
     {
-      nome:'Sargitário',
+      nome:'Sagitário',
       dias:'22 de novembro a 21 de dezembro',
       imagem:<Image style={styles.imageM} source={require('./assets/img/sargitario.png')}></Image>,
       cor:'Roxo ou Azul Royal - Reflete sabedoria, aventura e expansão.',
@@ -99,68 +100,12 @@ export default function App() {
     },
   ])
 
-  const verificar = () =>{
-
-    console.log(dia)
-
-    console.log(mes)
-
-    if((dia>=30 && mes=="fevereiro")){
-      setAparecerErro(true)
-    }
-
-    else if((dia>=21 && mes=="marco") || (dia<=19  && mes=="abril")){
-      setSigno(0)
-      setaparecer(true)
-    }
-    else if((dia>=20  && dia<31 && mes=="abril") || (dia<=19 && mes=="maio")){
-      setSigno(1)
-      setaparecer(true)
-    } 
-    else if((dia>=21 && mes=="maio") || (dia<=20 && mes=="junho")){
-      setSigno(2)
-      setaparecer(true)
-    } 
-    else if((dia>=21  && dia<31 && mes=="junho") || (dia<=22 && mes=="julho")){
-      setSigno(3)
-      setaparecer(true)
-    } 
-    else if((dia>=23 && mes=="julho") || (dia<=22 && mes=="agosto")){
-      setSigno(4)
-      setaparecer(true)
-    } 
-    else if((dia>=23 && mes=="agosto") || (dia<=22 && mes=="setembro")){
-      setSigno(5)
-      setaparecer(true)
-    } 
-    else if((dia>=23  && dia<31 && mes=="setembro") || (dia<=22 && mes=="outubro")){
-      setSigno(6)
-      setaparecer(true)
-    } 
-    else if((dia>=23 && mes=="outubro") || (dia<=21 && mes=="novembro")){
-      setSigno(7)
-      setaparecer(true)
-    } 
-    else if((dia>=22  && dia<31 && mes=="novembro") || (dia<=21 && mes=="dezembro")){
-      setSigno(8)
-      setaparecer(true)
-    } 
-    else if((dia>=22 && mes=="dezembro") || (dia<=19 && mes=="janeiro")){
-      setSigno(9)
-      setaparecer(true)
-    } 
-    else if((dia>=20 && mes=="janeiro") || (dia<=18 && mes=="fevereiro")){
-      setSigno(10)
-      setaparecer(true)
-    } 
-    else if((dia>=19 && mes=="fevereiro") || (dia<=20 && mes=="marco")){
-      setSigno(11)
-      setaparecer(true)
-    } 
-    else{
-      setAparecerErro(true)
-    }
-  }
+  const verificar = () => {
+    const result = getSignIndex(dia, mes);
+    setAparecerErro(result === null);
+    setaparecer(result !== null);
+    if (result !== null) setSigno(result);
+  };
 
     const novamente = () =>{
       setAparecerErro(false)
@@ -172,12 +117,13 @@ export default function App() {
     <ImageBackground source={require('./assets/img/horos.png')} style={styles.container} resizeMode='repeat'>
 
     <View style={styles.box}>
+      <Text accessibilityRole="header" style={styles.titulo}>Horóscopo</Text>
 
       <Text style={styles.text}>Dia de nascimento:</Text>
 
-      <Picker onValueChange={(setDia)} style={styles.input}>
+      <Picker accessibilityLabel="Dia de nascimento" selectedValue={dia} onValueChange={setDia} style={styles.input}>
 
-      <Picker.Item label=" " value="null"/>
+      <Picker.Item label="Selecione" value=""/>
       <Picker.Item label="1" value="1"/>
       <Picker.Item label="2" value="2"/>
       <Picker.Item label="3" value="3"/>
@@ -214,9 +160,9 @@ export default function App() {
 
       <Text style={styles.text}>Mês do nascimento:</Text>
 
-      <Picker onValueChange={(setMes)} style={styles.picker}>
+      <Picker accessibilityLabel="Mês de nascimento" selectedValue={mes} onValueChange={setMes} style={styles.picker}>
 
-          <Picker.Item label=" " value="null"/>
+          <Picker.Item label="Selecione" value=""/>
         
           <Picker.Item label="Janeiro" value="janeiro"/>
 
@@ -244,41 +190,45 @@ export default function App() {
 
         </Picker>
 
-        <Pressable onPress={()=>{verificar()}}>
+        <Pressable accessibilityRole="button" onPress={()=>{verificar()}}>
           <View style={styles.botao}>
             <Text style={styles.textB}>Verificar</Text>
           </View>
         </Pressable>
 
-        <Modal visible={aparecer} animationType='fade'>
+        <Modal visible={aparecer} animationType='fade' onRequestClose={novamente}>
         <ImageBackground source={require('./assets/img/horos.png')} style={styles.modal} resizeMode='repeat'>
+        <ScrollView contentContainerStyle={styles.modalContent}>
 
             <Text style={styles.nomeM} >{horoscupo[signo].nome}</Text>
             <Text style={styles.diaM} >{horoscupo[signo].dias}</Text>
-            <Text style={styles.imageM} >{horoscupo[signo].imagem}</Text>
+            <View style={styles.imageBox}>{horoscupo[signo].imagem}</View>
             <Text style={styles.corM} >{horoscupo[signo].cor}</Text>
             <Text style={styles.elementoM} >{horoscupo[signo].elemento}</Text>
 
-            <Pressable onPress={()=>{novamente()}}>
+            <Pressable accessibilityRole="button" onPress={()=>{novamente()}}>
           <View style={styles.botao}>
             <Text style={styles.textB}>Novo Teste</Text>
           </View>
         </Pressable>
 
+        </ScrollView>
         </ImageBackground>
         </Modal> 
 
-                <Modal visible={aparecerErro} animationType='fade'>
+                <Modal visible={aparecerErro} animationType='fade' onRequestClose={novamente}>
         <ImageBackground source={require('./assets/img/horos.png')} style={styles.modalErro} resizeMode='repeat'>
+        <ScrollView contentContainerStyle={styles.modalContent}>
 
             <Text style={styles.erro}>Digite uma data valida!!!</Text>
 
-        <Pressable onPress={()=>{novamente()}}>
+        <Pressable accessibilityRole="button" onPress={()=>{novamente()}}>
           <View style={styles.botao}>
             <Text style={styles.textB}>Tentar Novamente</Text>
           </View>
         </Pressable>
 
+        </ScrollView>
         </ImageBackground>
         </Modal> 
 

@@ -1,0 +1,87 @@
+{
+  "timestamp": "2026-11-06T16:53:43.343Z",
+  "results": [
+    {
+      "app": "termo",
+      "viewport": "mobile",
+      "status": "passed",
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "app": "termo",
+      "viewport": "desktop",
+      "status": "passed",
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "app": "agenda",
+      "viewport": "mobile",
+      "status": "failed",
+      "errors": [],
+      "externalRequests": [],
+      "failure": "locator.waitFor: Error: strict mode violation: getByPlaceholder('Descrição', { exact: true }) resolved to 2 elements:\n    1) <input rows=\"1\" dir=\"auto\" maxlength=\"20\" autocorrect=\"on\" autocomplete=\"on\" spellcheck=\"true\" placeholder=\"Descrição\" autocapitalize=\"sentences\" virtualkeyboardpolicy=\"auto\" class=\"css-11aywtz r-6taxm2 r-1cc235c r-nnwho7 r-1dzdj1l r-1d6rzhh r-cqee49 r-adyw6z r-umt1xa r-q4m81j r-e7q0ms\"/> aka getByRole('button', { name: 'Enviado Salvar', exact: true }).getByPlaceholder('Descrição')\n    2) <input rows=\"1\" value=\"\" dir=\"auto\" maxlength=\"20\" autocorrect=\"on\" autocomplete=\"on\" spellcheck=\"true\" placeholder=\"Descrição\" autocapitalize=\"sentences\" virtualkeyboardpolicy=\"auto\" class=\"css-11aywtz r-6taxm2 r-1cc235c r-nnwho7 r-1dzdj1l r-1d6rzhh r-cqee49 r-adyw6z r-umt1xa r-q4m81j r-e7q0ms\"/> aka getByRole('button', { name: 'Enviado Salvar Deletar' }).getByPlaceholder('Descrição')\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('Descrição', { exact: true }) to be visible\u001b[22m\n\n    at visible (/Users/noweb/Desktop/PAM/tests/os005-web.cjs:28:49)\n    at flow (/Users/noweb/Desktop/PAM/tests/os005-web.cjs:72:11)\n    at async /Users/noweb/Desktop/PAM/tests/os005-web.cjs:155:11"
+    },
+    {
+      "app": "agenda",
+      "viewport": "desktop",
+      "status": "failed",
+      "errors": [],
+      "externalRequests": [],
+      "failure": "locator.waitFor: Error: strict mode violation: getByPlaceholder('Descrição', { exact: true }) resolved to 2 elements:\n    1) <input rows=\"1\" dir=\"auto\" maxlength=\"20\" autocorrect=\"on\" autocomplete=\"on\" spellcheck=\"true\" placeholder=\"Descrição\" autocapitalize=\"sentences\" virtualkeyboardpolicy=\"auto\" class=\"css-11aywtz r-6taxm2 r-1cc235c r-nnwho7 r-1dzdj1l r-1d6rzhh r-cqee49 r-adyw6z r-umt1xa r-q4m81j r-e7q0ms\"/> aka getByRole('button', { name: 'Enviado Salvar', exact: true }).getByPlaceholder('Descrição')\n    2) <input rows=\"1\" value=\"\" dir=\"auto\" maxlength=\"20\" autocorrect=\"on\" autocomplete=\"on\" spellcheck=\"true\" placeholder=\"Descrição\" autocapitalize=\"sentences\" virtualkeyboardpolicy=\"auto\" class=\"css-11aywtz r-6taxm2 r-1cc235c r-nnwho7 r-1dzdj1l r-1d6rzhh r-cqee49 r-adyw6z r-umt1xa r-q4m81j r-e7q0ms\"/> aka getByRole('button', { name: 'Enviado Salvar Deletar' }).getByPlaceholder('Descrição')\n\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('Descrição', { exact: true }) to be visible\u001b[22m\n\n    at visible (/Users/noweb/Desktop/PAM/tests/os005-web.cjs:28:49)\n    at flow (/Users/noweb/Desktop/PAM/tests/os005-web.cjs:72:11)\n    at async /Users/noweb/Desktop/PAM/tests/os005-web.cjs:155:11"
+    },
+    {
+      "app": "zookids",
+      "viewport": "mobile",
+      "status": "failed",
+      "errors": [],
+      "externalRequests": [],
+      "failure": "locator.click: Error: strict mode violation: getByRole('button', { name: 'Salvar cadastro' }) resolved to 2 elements:\n    1) <button tabindex=\"0\" role=\"button\" type=\"button\" class=\"css-g5y9jx r-1loqt21 r-1otgn73 r-1awozwy r-ymdaj1 r-1pi2tsx r-1777fci r-13qz1uu\">…</button> aka getByRole('button', { name: 'Escolha um icone: Ícone 0 Í' })\n    2) <button tabindex=\"0\" role=\"button\" type=\"button\" aria-label=\"Salvar cadastro\" class=\"css-g5y9jx r-1loqt21 r-1otgn73\">…</button> aka getByRole('button', { name: 'Salvar cadastro', exact: true })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Salvar cadastro' })\u001b[22m\n\n    at flow (/Users/noweb/Desktop/PAM/tests/os005-web.cjs:82:65)\n    at async /Users/noweb/Desktop/PAM/tests/os005-web.cjs:155:11"
+    },
+    {
+      "app": "zookids",
+      "viewport": "desktop",
+      "status": "failed",
+      "errors": [],
+      "externalRequests": [],
+      "failure": "locator.click: Error: strict mode violation: getByRole('button', { name: 'Salvar cadastro' }) resolved to 2 elements:\n    1) <button tabindex=\"0\" role=\"button\" type=\"button\" class=\"css-g5y9jx r-1loqt21 r-1otgn73 r-1awozwy r-ymdaj1 r-1pi2tsx r-1777fci r-13qz1uu\">…</button> aka getByRole('button', { name: 'Escolha um icone: Ícone 0 Í' })\n    2) <button tabindex=\"0\" role=\"button\" type=\"button\" aria-label=\"Salvar cadastro\" class=\"css-g5y9jx r-1loqt21 r-1otgn73\">…</button> aka getByRole('button', { name: 'Salvar cadastro', exact: true })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Salvar cadastro' })\u001b[22m\n\n    at flow (/Users/noweb/Desktop/PAM/tests/os005-web.cjs:82:65)\n    at async /Users/noweb/Desktop/PAM/tests/os005-web.cjs:155:11"
+    },
+    {
+      "app": "template",
+      "viewport": "mobile",
+      "status": "failed",
+      "errors": [
+        "Minified React error #418; visit https://react.dev/errors/418?args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ],
+      "externalRequests": [],
+      "failure": "AssertionError [ERR_ASSERTION]: Critical browser errors\n+ actual - expected\n\n+ [\n+   'Minified React error #418; visit https://react.dev/errors/418?args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.'\n+ ]\n- []\n\n    at /Users/noweb/Desktop/PAM/tests/os005-web.cjs:156:18\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at process.callbackTrampoline (node:internal/async_hooks:130:17)"
+    },
+    {
+      "app": "template",
+      "viewport": "desktop",
+      "status": "failed",
+      "errors": [
+        "Minified React error #418; visit https://react.dev/errors/418?args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ],
+      "externalRequests": [],
+      "failure": "AssertionError [ERR_ASSERTION]: Critical browser errors\n+ actual - expected\n\n+ [\n+   'Minified React error #418; visit https://react.dev/errors/418?args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.'\n+ ]\n- []\n\n    at /Users/noweb/Desktop/PAM/tests/os005-web.cjs:156:18\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:453:9)\n    at process.callbackTrampoline (node:internal/async_hooks:130:17)"
+    },
+    {
+      "app": "medlive",
+      "viewport": "mobile",
+      "status": "failed",
+      "errors": [],
+      "externalRequests": [],
+      "failure": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Localização negada ou indisponível. Centro ilustrativo mantido.', { exact: true }) to be visible\u001b[22m\n\n    at visible (/Users/noweb/Desktop/PAM/tests/os005-web.cjs:28:49)\n    at flow (/Users/noweb/Desktop/PAM/tests/os005-web.cjs:120:11)\n    at async /Users/noweb/Desktop/PAM/tests/os005-web.cjs:155:11"
+    },
+    {
+      "app": "medlive",
+      "viewport": "desktop",
+      "status": "failed",
+      "errors": [],
+      "externalRequests": [],
+      "failure": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Localização negada ou indisponível. Centro ilustrativo mantido.', { exact: true }) to be visible\u001b[22m\n\n    at visible (/Users/noweb/Desktop/PAM/tests/os005-web.cjs:28:49)\n    at flow (/Users/noweb/Desktop/PAM/tests/os005-web.cjs:120:11)\n    at async /Users/noweb/Desktop/PAM/tests/os005-web.cjs:155:11"
+    }
+  ]
+}

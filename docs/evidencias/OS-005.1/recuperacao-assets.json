@@ -1,0 +1,103 @@
+{
+  "scope": "Arquivos de trabalho, refs Git e reflogs locais; sem fetch ou histórico reescrito.",
+  "local_archives": [],
+  "assets": [
+    {
+      "asset": "avesPantanalR.png",
+      "historical_versions": [
+        {
+          "object": "c0dca44da0d4e20bdc8e29d55f86b1db999b9666",
+          "path": "ZooKids/assets/img/t2/avesPantanalR.png",
+          "bytes": 199233,
+          "sha256": "c40cdbb0f2cc0fe0466076e5ffae2606475140cc72fe498f4c360a16bc0787cb",
+          "png_signature": false
+        }
+      ]
+    },
+    {
+      "asset": "botao.mp3",
+      "historical_versions": []
+    },
+    {
+      "asset": "botCode.mp3",
+      "historical_versions": []
+    },
+    {
+      "asset": "ares.png",
+      "historical_versions": []
+    },
+    {
+      "asset": "touro.png",
+      "historical_versions": []
+    },
+    {
+      "asset": "gemeos.png",
+      "historical_versions": []
+    },
+    {
+      "asset": "cancer.png",
+      "historical_versions": []
+    },
+    {
+      "asset": "leao.png",
+      "historical_versions": [
+        {
+          "object": "30767335b38e739d5f6e9228189d106fe13eace2",
+          "path": "ZooKids/assets/img/icons/leao.png",
+          "bytes": 163221,
+          "sha256": "090ef1549631f115e887a88ed5a1bcc045f047639a1aa9192c71629ed91aa108",
+          "png_signature": true
+        },
+        {
+          "object": "de8508c0dddfc1206b9f6bda32a21611c853788b",
+          "path": "ZooKids/assets/img/t4/leao.png",
+          "bytes": 430104,
+          "sha256": "6adbee99cd5c6a77675a38a58ab5d380289a1ae0a706140471d3dc4b1dd9382e",
+          "png_signature": true
+        }
+      ]
+    },
+    {
+      "asset": "virgem.png",
+      "historical_versions": []
+    },
+    {
+      "asset": "libra.png",
+      "historical_versions": []
+    },
+    {
+      "asset": "escorpiao.png",
+      "historical_versions": []
+    },
+    {
+      "asset": "sargitario.png",
+      "historical_versions": []
+    },
+    {
+      "asset": "capricornio.png",
+      "historical_versions": []
+    },
+    {
+      "asset": "aquario.png",
+      "historical_versions": []
+    },
+    {
+      "asset": "peixes.png",
+      "historical_versions": []
+    },
+    {
+      "asset": "horos.png",
+      "historical_versions": []
+    }
+  ],
+  "psd_inspection": [
+    {
+      "path": "ZooKids/assets/img/2.psd",
+      "composite": "Botão Formigueiros, 1280×333; não é foto de Aves do Pantanal."
+    },
+    {
+      "path": "ZooKids/assets/img/23.psd",
+      "composite": "Botão Voltar, 1000×333; não é foto de Aves do Pantanal."
+    }
+  ]
+}

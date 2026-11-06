@@ -117,7 +117,7 @@ export default function Login({ navigation }) {
                   onFocus={() => handleInputFocus('senha')}
                   onBlur={handleInputBlur}
                 />
-                <TouchableOpacity 
+                <TouchableOpacity accessibilityRole="button"
                   onPress={() => setSenhaVisivel(!senhaVisivel)} 
                   style={styles.eyeButton}
                 >
@@ -132,12 +132,12 @@ export default function Login({ navigation }) {
             </View>
 
             {/* Link Esqueci a Senha */}
-            <Pressable style={styles.forgotPassword}>
+            <Pressable accessibilityRole="button" style={styles.forgotPassword}>
               <Text style={styles.forgotPasswordText}>Esqueceu sua senha?</Text>
             </Pressable>
 
             {/* Botão de login */}
-            <TouchableOpacity onPress={()=>logar()} style={styles.loginButton}>
+            <TouchableOpacity accessibilityRole="button" onPress={()=>logar()} style={styles.loginButton}>
               <LinearGradient
                 colors={['#6247AA', '#856BCC']}
                 start={{ x: 0, y: 0 }}
@@ -159,7 +159,7 @@ export default function Login({ navigation }) {
             {/* Link para cadastro */}
             <View style={styles.signupContainer}>
               <Text style={styles.signupText}>Não tem uma conta?</Text>
-              <Pressable onPress={() => navigation.navigate('Cadastro')}>
+              <Pressable accessibilityRole="button" onPress={() => navigation.navigate('Cadastro')}>
                 <Text style={styles.signupLink}>Crie uma</Text>
               </Pressable>
             </View>

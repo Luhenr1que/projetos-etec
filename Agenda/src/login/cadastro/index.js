@@ -2,7 +2,7 @@ import styles from './style.js';
 import { useNavigation } from '@react-navigation/native';
 import { useEffect,useState} from 'react';
 import { View, Text, TextInput, Pressable, Image,TouchableWithoutFeedback, Keyboard, Modal} from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '../../../storage';
 
 
 export default function Entrar (){
@@ -163,7 +163,7 @@ return(
                               secureTextEntry={!senhaVisivel}
                               onChangeText={(text) => cad("senha", text)}
                         />
-                  <Pressable onPress={() => setSenhaVisivel(!senhaVisivel)} style={styles.olhoBotao}>
+                  <Pressable accessibilityRole="button" onPress={() => setSenhaVisivel(!senhaVisivel)} style={styles.olhoBotao}>
                         <Image style={styles.olhoIcone}
                         source={
                         senhaVisivel
@@ -173,11 +173,11 @@ return(
                         />
                   </Pressable>
                   </View>
-                  <Pressable onPress={()=> {salvar()}}><Text style={styles.bot}>Concluir</Text></Pressable>
+                  <Pressable accessibilityRole="button" onPress={()=> {salvar()}}><Text style={styles.bot}>Concluir</Text></Pressable>
             </View>
 
             <Modal animationType='fade' visible={mAviso} transparent={true} style={styles.modal}>
-                  <Pressable onPress={()=>setMAviso(false)} style={styles.modal}>
+                  <Pressable accessibilityRole="button" onPress={()=>setMAviso(false)} style={styles.modal}>
                   <View style={styles.boxM}>
                         <Text style={styles.aviso}>{aviso}</Text>    
                   </View>

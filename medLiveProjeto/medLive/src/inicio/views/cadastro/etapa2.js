@@ -1,5 +1,7 @@
+import { lookupAddress } from '../../../../addressLookup';
+import { Alert } from '../../../../alerts';
 import React, { useState, useRef } from 'react';
-import { View, ScrollView, TextInput, Text, Pressable, Image, Dimensions, Alert, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { View, ScrollView, TextInput, Text, Pressable, Image, Dimensions, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme } from '../../../../themeContext';
 import getStyles from './style';
@@ -67,8 +69,7 @@ export default function Cadastro2({ navigation, route }) {
       
       if (cleanedCep.length !== 8) return;
       
-      const response = await fetch(`https://viacep.com.br/ws/${cleanedCep}/json/`);
-      const data = await response.json();
+      const data = await lookupAddress(cleanedCep);
       
       if (data.erro) {
         Alert.alert('❌', 'CEP não encontrado');
@@ -378,7 +379,7 @@ export default function Cadastro2({ navigation, route }) {
             </View>
 
             {/* Botão de continuar */}
-            <TouchableOpacity 
+            <TouchableOpacity accessibilityRole="button"
               style={styles.botoes} 
               onPress={continuarCadastro} 
               disabled={loading}
@@ -401,7 +402,7 @@ export default function Cadastro2({ navigation, route }) {
             </TouchableOpacity>
 
             {/* Botão Voltar */}
-            <TouchableOpacity 
+            <TouchableOpacity accessibilityRole="button"
               style={[styles.botoes, { marginTop: 10 }]} 
               onPress={() => navigation.goBack()}
             >

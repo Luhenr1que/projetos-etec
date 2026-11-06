@@ -1,0 +1,75 @@
+{
+  "timestamp": "2026-11-06T17:01:31.201Z",
+  "results": [
+    {
+      "app": "termo",
+      "viewport": "mobile",
+      "status": "passed",
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "app": "termo",
+      "viewport": "desktop",
+      "status": "passed",
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "app": "agenda",
+      "viewport": "mobile",
+      "status": "passed",
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "app": "agenda",
+      "viewport": "desktop",
+      "status": "passed",
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "app": "zookids",
+      "viewport": "mobile",
+      "status": "passed",
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "app": "zookids",
+      "viewport": "desktop",
+      "status": "passed",
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "app": "template",
+      "viewport": "mobile",
+      "status": "passed",
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "app": "template",
+      "viewport": "desktop",
+      "status": "passed",
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "app": "medlive",
+      "viewport": "mobile",
+      "status": "passed",
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "app": "medlive",
+      "viewport": "desktop",
+      "status": "passed",
+      "errors": [],
+      "externalRequests": []
+    }
+  ]
+}

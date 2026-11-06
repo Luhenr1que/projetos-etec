@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-11-06T19:14:10.502Z",
+  "browsers": [
+    {
+      "browser": "chromium",
+      "available": true,
+      "customExecutable": true,
+      "reason": "Executável encontrado"
+    },
+    {
+      "browser": "firefox",
+      "available": false,
+      "customExecutable": false,
+      "reason": "Executável Playwright não instalado; teste não executado"
+    },
+    {
+      "browser": "webkit",
+      "available": false,
+      "customExecutable": false,
+      "reason": "Executável Playwright não instalado; teste não executado"
+    }
+  ],
+  "note": "Não baixa navegadores nem inicia dispositivos. Dispositivos são verificados separadamente."
+}

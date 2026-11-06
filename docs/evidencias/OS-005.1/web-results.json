@@ -1,0 +1,165 @@
+{
+  "timestamp": "2026-11-06T19:14:06.828Z",
+  "results": [
+    {
+      "browser": "chromium",
+      "app": "termo",
+      "viewport": "mobile",
+      "status": "passed",
+      "basePath": "/demos/termo",
+      "errors": [],
+      "externalRequests": [],
+      "wrongPaths": [],
+      "failedResponses": [],
+      "media": {
+        "checkedImages": 0,
+        "badImages": [],
+        "badFonts": []
+      }
+    },
+    {
+      "browser": "chromium",
+      "app": "termo",
+      "viewport": "desktop",
+      "status": "passed",
+      "basePath": "/demos/termo",
+      "errors": [],
+      "externalRequests": [],
+      "wrongPaths": [],
+      "failedResponses": [],
+      "media": {
+        "checkedImages": 0,
+        "badImages": [],
+        "badFonts": []
+      }
+    },
+    {
+      "browser": "chromium",
+      "app": "agenda",
+      "viewport": "mobile",
+      "status": "passed",
+      "basePath": "/demos/agenda",
+      "errors": [],
+      "externalRequests": [],
+      "wrongPaths": [],
+      "failedResponses": [],
+      "media": {
+        "checkedImages": 5,
+        "badImages": [],
+        "badFonts": []
+      }
+    },
+    {
+      "browser": "chromium",
+      "app": "agenda",
+      "viewport": "desktop",
+      "status": "passed",
+      "basePath": "/demos/agenda",
+      "errors": [],
+      "externalRequests": [],
+      "wrongPaths": [],
+      "failedResponses": [],
+      "media": {
+        "checkedImages": 5,
+        "badImages": [],
+        "badFonts": []
+      }
+    },
+    {
+      "browser": "chromium",
+      "app": "zookids",
+      "viewport": "mobile",
+      "status": "passed",
+      "basePath": "/demos/zookids",
+      "errors": [],
+      "externalRequests": [],
+      "wrongPaths": [],
+      "failedResponses": [],
+      "media": {
+        "checkedImages": 5,
+        "badImages": [],
+        "badFonts": []
+      }
+    },
+    {
+      "browser": "chromium",
+      "app": "zookids",
+      "viewport": "desktop",
+      "status": "passed",
+      "basePath": "/demos/zookids",
+      "errors": [],
+      "externalRequests": [],
+      "wrongPaths": [],
+      "failedResponses": [],
+      "media": {
+        "checkedImages": 5,
+        "badImages": [],
+        "badFonts": []
+      }
+    },
+    {
+      "browser": "chromium",
+      "app": "template",
+      "viewport": "mobile",
+      "status": "passed",
+      "basePath": "/_preservacao/medlive-template",
+      "errors": [],
+      "externalRequests": [],
+      "wrongPaths": [],
+      "failedResponses": [],
+      "media": {
+        "checkedImages": 0,
+        "badImages": [],
+        "badFonts": []
+      }
+    },
+    {
+      "browser": "chromium",
+      "app": "template",
+      "viewport": "desktop",
+      "status": "passed",
+      "basePath": "/_preservacao/medlive-template",
+      "errors": [],
+      "externalRequests": [],
+      "wrongPaths": [],
+      "failedResponses": [],
+      "media": {
+        "checkedImages": 0,
+        "badImages": [],
+        "badFonts": []
+      }
+    },
+    {
+      "browser": "chromium",
+      "app": "medlive",
+      "viewport": "mobile",
+      "status": "passed",
+      "basePath": "/demos/medlive",
+      "errors": [],
+      "externalRequests": [],
+      "wrongPaths": [],
+      "failedResponses": [],
+      "media": {
+        "checkedImages": 2,
+        "badImages": [],
+        "badFonts": []
+      }
+    },
+    {
+      "browser": "chromium",
+      "app": "medlive",
+      "viewport": "desktop",
+      "status": "passed",
+      "basePath": "/demos/medlive",
+      "errors": [],
+      "externalRequests": [],
+      "wrongPaths": [],
+      "failedResponses": [],
+      "media": {
+        "checkedImages": 2,
+        "badImages": [],
+        "badFonts": []
+      }
+    }
+  ]
+}

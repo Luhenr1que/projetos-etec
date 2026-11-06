@@ -1,0 +1,33 @@
+
+> agenda@1.0.0 build:web
+> expo export --platform web --max-workers 2
+
+
+Using (experimental) base path: /demos/agenda
+Starting Metro Bundler
+Web Bundled 206ms index.js (458 modules)
+
+› Assets (19):
+assets/img/back.09f862e6f048996b44c00459d282ecd0.png (192 kB)
+assets/img/bmg.4849113f2bb3ffa0e48cabbd5377495a.png (22.6 kB)
+assets/img/lixeira.7f527a87211bf9126936968fe5bf2bf7.png (4.22 kB)
+assets/img/naoVer.9bcf09d5aef6b9183adc9671abc497ac.png (11.7 kB)
+assets/img/no.5d777b88d5ed688aab16320284dc26e1.png (28.1 kB)
+assets/img/perfil.08109a780cbe3f4ef0aa765cf90a55cc.png (17.9 kB)
+assets/img/ver.9dbcd705d8e25875bc4b0ef20aaa53c5.png (12 kB)
+assets/img/yes.48987212c9a6fbd4441e987a23bec6a2.png (26 kB)
+node_modules/@react-navigation/elements/lib/module/assets/back-icon-mask.0a328cd9c1afd0afe8e3b1ec5165b1b4.png (653 B)
+node_modules/@react-navigation/elements/lib/module/assets/back-icon.35ba0eaec5a4f5ed12ca16fabeae451d.png (207 B)
+node_modules/@react-navigation/elements/lib/module/assets/clear-icon.c94f6478e7ae0cdd9f15de1fcb9e5e55.png (4 variations | 425 B)
+node_modules/@react-navigation/elements/lib/module/assets/close-icon.808e1b1b9b53114ec2838071a7e6daa7.png (4 variations | 235 B)
+node_modules/@react-navigation/elements/lib/module/assets/search-icon.286d67d3f74808a60a78d3ebf1a5fb57.png (928 B)
+
+› web bundles (1):
+_expo/static/js/web/index-7479c69561218ed9000624b11a9312ca.js (747 kB)
+
+› Files (3):
+favicon.ico (14.5 kB)
+index.html (1.19 kB)
+metadata.json (49 B)
+
+Exported: dist

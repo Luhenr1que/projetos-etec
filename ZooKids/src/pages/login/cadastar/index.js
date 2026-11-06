@@ -4,8 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import * as Animatable from 'react-native-animatable';
 import { useState, useEffect } from 'react';
 import styles from './style.js';
-import { useAudio } from '../../../../audioContext.js';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useAudio } from '../../../../audioContext';
+import AsyncStorage from '../../../../storage';
 
 
 export default function Cadastrar (){
@@ -28,7 +28,6 @@ export default function Cadastrar (){
     const { playSound, playSomBot } = useAudio();
 
     useEffect(() => {
-    console.log(formData);
     playSound();
     }, [formData]);
 
@@ -180,7 +179,7 @@ export default function Cadastrar (){
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <KeyboardAvoidingView style={{ flex: 1 }} >
         <ImageBackground source={require('../../../../assets/img/incio/cadastrar/back.png')} style={styles.container}>
-            <Pressable style={styles.botBack} onPress={()=> go('Inicio')}><Image style={styles.botBackImg} source={require('../../../../assets/img/incio/cadastrar/botBack.png')}/></Pressable>
+            <Pressable accessibilityRole="button" style={styles.botBack} onPress={()=> go('Inicio')}><Image style={styles.botBackImg} source={require('../../../../assets/img/incio/cadastrar/botBack.png')}/></Pressable>
             <Animatable.View style={styles.box}>
             
                 <Animatable.View style={styles.textArea}>
@@ -202,66 +201,66 @@ export default function Cadastrar (){
                     <Text style={styles.textL}>Senha:</Text>
                     <View style={[styles.text,styles.senhaContainer]}>
                         <TextInput style={[ styles.senhaInput,{ borderColor: borda }]}  placeholder="Crie uma senha" placeholderTextColor="rgba(0, 0, 0, 0.3)" minLength={8} secureTextEntry={!senhaVisivel} onChangeText={(text) => cad("senha", text)} />
-                        <Pressable onPress={() => setSenhaVisivel(!senhaVisivel)} style={styles.olhoBotao}><Image source={senhaVisivel ? require('../../../../assets/img/incio/naoVer.png') : require('../../../../assets/img/incio/ver.png')} style={styles.olhoIcone}/></Pressable>
+                        <Pressable accessibilityRole="button" onPress={() => setSenhaVisivel(!senhaVisivel)} style={styles.olhoBotao}><Image source={senhaVisivel ? require('../../../../assets/img/incio/naoVer.png') : require('../../../../assets/img/incio/ver.png')} style={styles.olhoIcone}/></Pressable>
                     </View>
                 </Animatable.View>
 
-                <Pressable onPress={()=> modalIcon()}><Image style={styles.bot} source={require('../../../../assets/img/incio/cadastrar/cont.png')}/></Pressable>
+                <Pressable accessibilityRole="button" accessibilityLabel="Continuar cadastro" onPress={()=> modalIcon()}><Image style={styles.bot} source={require('../../../../assets/img/incio/cadastrar/cont.png')}/></Pressable>
             </Animatable.View>
 
                 <Modal style={styles.modalIc} animationType='fade' visible={mIcon} transparent={true}>
-                    <Pressable onPress={()=> fecharlIcon()} style={styles.modalIc}>
+                    <Pressable accessibilityRole="button" onPress={()=> fecharlIcon()} style={styles.modalIc}>
                         <View style={styles.boxI}>
                             <Text style={styles.textI}>Escolha um icone:</Text>
                             <View style={styles.boxILi}>
-                                <Pressable onPress={()=>cad("icone","0")}>
+                                <Pressable accessibilityRole="button" accessibilityLabel="Ícone 0" onPress={()=>cad("icone","0")}>
                                     <Image style={[styles.imgIc, formData.icone === "0" && styles.ImgIcSelect]} source={require('../../../../assets/img/icons/M.png')}/>
                                 </Pressable>
-                                <Pressable onPress={()=>cad("icone","1")}>
+                                <Pressable accessibilityRole="button" accessibilityLabel="Ícone 1" onPress={()=>cad("icone","1")}>
                                     <Image style={[styles.imgIc, formData.icone === "1" && styles.ImgIcSelect]} source={require('../../../../assets/img/icons/F.png')}/>
                                 </Pressable>
                             </View>
                             <View style={styles.boxILi}>
-                                <Pressable onPress={()=>cad("icone","2")}>
+                                <Pressable accessibilityRole="button" accessibilityLabel="Ícone 2" onPress={()=>cad("icone","2")}>
                                     <Image style={[styles.imgIc, formData.icone === "2" && styles.ImgIcSelect]} source={require('../../../../assets/img/icons/leao.png')}/>
                                 </Pressable>
-                                <Pressable onPress={()=>cad("icone","3")}>
+                                <Pressable accessibilityRole="button" accessibilityLabel="Ícone 3" onPress={()=>cad("icone","3")}>
                                     <Image style={[styles.imgIc, formData.icone === "3" && styles.ImgIcSelect]} source={require('../../../../assets/img/icons/zebra.png')}/>
                                 </Pressable>
-                                <Pressable onPress={()=>cad("icone","4")}>
+                                <Pressable accessibilityRole="button" accessibilityLabel="Ícone 4" onPress={()=>cad("icone","4")}>
                                     <Image style={[styles.imgIc, formData.icone === "4" && styles.ImgIcSelect]} source={require('../../../../assets/img/icons/macaco.png')}/>
                                 </Pressable>
                             </View>
                             <View style={styles.boxILi}>
-                                <Pressable onPress={()=>cad("icone","5")}>
+                                <Pressable accessibilityRole="button" accessibilityLabel="Ícone 5" onPress={()=>cad("icone","5")}>
                                     <Image style={[styles.imgIc, formData.icone === "5" && styles.ImgIcSelect]} source={require('../../../../assets/img/icons/cap.png')}/>
                                 </Pressable>
-                                <Pressable onPress={()=>cad("icone","6")}>
+                                <Pressable accessibilityRole="button" accessibilityLabel="Ícone 6" onPress={()=>cad("icone","6")}>
                                     <Image style={[styles.imgIc, formData.icone === "6" && styles.ImgIcSelect]} source={require('../../../../assets/img/icons/elefante.png')}/>
                                 </Pressable>
-                                <Pressable onPress={()=>cad("icone","7")}>
+                                <Pressable accessibilityRole="button" accessibilityLabel="Ícone 7" onPress={()=>cad("icone","7")}>
                                     <Image style={[styles.imgIc, formData.icone === "7" && styles.ImgIcSelect]} source={require('../../../../assets/img/icons/girafa.png')}/>
                                 </Pressable>
                             </View>
                             <View style={styles.boxILi}>
-                                <Pressable onPress={()=>cad("icone","8")}>
+                                <Pressable accessibilityRole="button" accessibilityLabel="Ícone 8" onPress={()=>cad("icone","8")}>
                                     <Image style={[styles.imgIc, formData.icone === "8" && styles.ImgIcSelect]} source={require('../../../../assets/img/icons/oncaPintada.png')}/>
                                 </Pressable>
-                                <Pressable onPress={()=>cad("icone","9")}>
+                                <Pressable accessibilityRole="button" accessibilityLabel="Ícone 9" onPress={()=>cad("icone","9")}>
                                     <Image style={[styles.imgIc, formData.icone === "9" && styles.ImgIcSelect]} source={require('../../../../assets/img/icons/axolote.png')}/>
                                 </Pressable>
-                                <Pressable onPress={()=>cad("icone","10")}>
+                                <Pressable accessibilityRole="button" accessibilityLabel="Ícone 10" onPress={()=>cad("icone","10")}>
                                     <Image style={[styles.imgIc, formData.icone === "10" && styles.ImgIcSelect]} source={require('../../../../assets/img/icons/jacare.png')}/>
                                 </Pressable>
                             </View>
 
-                            <Pressable onPress={()=> go("Entrar")}><Image style={styles.bot} source={require('../../../../assets/img/incio/cadastrar/cont.png')}/></Pressable>
+                            <Pressable accessibilityRole="button" accessibilityLabel="Salvar cadastro" onPress={()=> go("Entrar")}><Image style={styles.bot} source={require('../../../../assets/img/incio/cadastrar/cont.png')}/></Pressable>
                         </View>
                     </Pressable>
                 </Modal>
 
                 <Modal animationType='fade' visible={mAviso} transparent={true} style={styles.modal}>
-                    <Pressable onPress={()=>modal()} style={styles.modal}>
+                    <Pressable accessibilityRole="button" onPress={()=>modal()} style={styles.modal}>
                         <View style={styles.boxM}>
                             <Text style={styles.aviso}>{aviso}</Text>    
                         </View>

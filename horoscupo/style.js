@@ -1,145 +1,21 @@
-import {StyleSheet} from 'react-native';
-
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width:'100%',
-        padding:10,
-
-    },
-
-    box: {
-        width:'100%',
-        display:'flex',
-        flexDirection:'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderWidth:10,
-        borderColor:'#f2e3fe',
-        gap:20,
-        padding:20,
-        borderRadius:20,
-    },
-    text:{
-        fontFamily:'Arial',
-        fontSize:30,
-        color:'#fff',
-    },
-
-    input:{
-        fontFamily:'Arial',
-        backgroundColor: '#fff',
-        borderWidth:1,
-        borderRadius:10,
-        fontSize:20,
-        width:'90%',
-        height:40,
-        textAlign:'center',
-    },
-
-    picker:{
-        fontFamily:'Arial',
-        textAlign:'center',
-        backgroundColor: '#fff',
-        borderWidth:2,
-        borderRadius:10,
-        fontSize:20,
-        width:'90%',
-        height:40,
-    },
-    botao:{
-        marginTop:10,
-        fontFamily:'Arial',
-        textAlign:'center',
-        justifyContent:'center',
-        width:'100%',
-        height:40,
-        padding:13,
-        backgroundColor:'#fff',
-        borderWidth:2,
-        borderRadius:10,
-        borderColor:'#fff',
-    },
-    textB:{
-        textAlign:'center',
-        fontFamily:'Arial',
-        fontSize:20,
-        color:'#000000',
-    },
-
-    modal:{
-        width:'100%',
-        padding:20,
-        alignContent:'center',
-        justifyContent:'center',
-        textAlign:'center',
-        fontSize:30,
-        position:'absolute',
-        borderWidth:2,
-    },
-    nomeM:{
-        flex:1,
-        alignContent:'center',
-        justifyContent:'center',
-        textAlign:'center',
-        fontSize:40,
-        color:'#fff',
-        padding:10,
-    },
-
-    diaM:{
-        flex:1,
-        alignContent:'center',
-        justifyContent:'center',
-        textAlign:'center',
-        fontSize:25,
-        color:'#fff',
-    },
-    imageM:{
-        flex:2,
-        alignContent:'center',
-        justifyContent:'center',
-        width:320,
-        height:320,
-        position:'relative',
-        padding:5,
-    },
-    corM:{
-        flex:1,
-        alignContent:'center',
-        justifyContent:'center',
-        textAlign:'center',
-        fontSize:20,
-        color:'#fff',
-        paddingBottom:10,
-    },
-    elementoM:{
-        flex:1,
-        alignContent:'center',
-        justifyContent:'center',
-        textAlign:'center',
-        fontSize:25,
-        color:'#fff',
-    },
-    modalErro:{
-        width:'100%',
-        height:'100%',
-        padding:20,
-        alignContent:'center',
-        justifyContent:'center',
-        textAlign:'center',
-        fontSize:30,
-        borderWidth:2,
-    },
-    erro:{
-        fontFamily:'Arial',
-        textAlign:'center',
-        fontSize:30,
-        color:'#fff',
-
-    }
-  });
-
-  export default styles
+import { StyleSheet } from 'react-native';
+export default StyleSheet.create({
+ container: { flex: 1, width: '100%', padding: 16, justifyContent: 'center', alignItems: 'center', backgroundColor: '#29183f' },
+ box: { width: '100%', padding: 20, gap: 18, borderWidth: 5, borderColor: '#f2e3fe', borderRadius: 20, alignItems: 'center', backgroundColor: '#29183fcc' },
+ titulo: { color: '#f6e7c9', fontSize: 34, fontWeight: '700', textAlign: 'center', marginBottom: 10 },
+ text: { fontSize: 23, color: '#fff', textAlign: 'center' },
+ input: { width: '100%', height: 48, backgroundColor: '#fff', color: '#29183f', borderRadius: 10, fontSize: 20 },
+ picker: { width: '100%', height: 48, backgroundColor: '#fff', color: '#29183f', borderRadius: 10, fontSize: 20 },
+ botao: { minWidth: 180, minHeight: 48, paddingHorizontal: 18, paddingVertical: 12, backgroundColor: '#fff', borderRadius: 10, justifyContent: 'center', marginTop: 8 },
+ textB: { fontSize: 20, color: '#29183f', textAlign: 'center' },
+ modal: { flex: 1, width: '100%', backgroundColor: '#29183f' },
+ modalErro: { flex: 1, width: '100%', backgroundColor: '#29183f' },
+ modalContent: { width: '100%', maxWidth: 480, alignSelf: 'center', flexGrow: 1, padding: 20, alignItems: 'center', justifyContent: 'center', gap: 14 },
+ nomeM: { fontSize: 34, color: '#fff', textAlign: 'center', fontWeight: '700' },
+ diaM: { fontSize: 21, color: '#fff', textAlign: 'center' },
+ imageBox: { width: '100%', maxWidth: 280, aspectRatio: 1 },
+ imageM: { width: '100%', height: '100%', resizeMode: 'contain' },
+ corM: { fontSize: 18, color: '#fff', textAlign: 'center' },
+ elementoM: { fontSize: 18, color: '#fff', textAlign: 'center' },
+ erro: { fontSize: 26, color: '#fff', textAlign: 'center' },
+});

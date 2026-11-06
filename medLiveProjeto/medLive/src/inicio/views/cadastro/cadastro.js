@@ -1,5 +1,6 @@
+import { Alert } from '../../../../alerts';
 import React, { useState } from 'react';
-import { View, ScrollView, TextInput, Text, Pressable, Image, Dimensions, Alert, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { View, ScrollView, TextInput, Text, Pressable, Image, Dimensions, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme } from '../../../../themeContext';
 import getStyles from './style';
@@ -295,7 +296,7 @@ export default function Cadastro({ navigation }) {
                   onFocus={() => handleInputFocus('senhaPaciente')}
                   onBlur={handleInputBlur}
                 />
-                <TouchableOpacity 
+                <TouchableOpacity accessibilityRole="button"
                   onPress={() => setSenhaVisivel(!senhaVisivel)} 
                   style={styles.olhoBotao}
                 >
@@ -310,7 +311,7 @@ export default function Cadastro({ navigation }) {
             </View>
 
             {/* Botão de continuar */}
-            <TouchableOpacity 
+            <TouchableOpacity accessibilityRole="button"
               style={styles.botoes} 
               onPress={continuarCadastro} 
               disabled={loading}
@@ -342,7 +343,7 @@ export default function Cadastro({ navigation }) {
             {/* Link para login */}
             <View style={styles.signupContainer}>
               <Text style={styles.signupText}>Já tem uma conta?</Text>
-              <Pressable onPress={() => navigation.navigate('Login')}>
+              <Pressable accessibilityRole="button" onPress={() => navigation.navigate('Login')}>
                 <Text style={styles.signupLink}>Faça login</Text>
               </Pressable>
             </View>

@@ -1,5 +1,6 @@
+import { Alert } from '../../../../alerts';
 import React, { useState } from 'react';
-import { View, ScrollView, Text, Image, TouchableOpacity, Modal, ActivityIndicator, Alert, Platform } from 'react-native';
+import { View, ScrollView, Text, Image, TouchableOpacity, Modal, ActivityIndicator, Platform } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme } from '../../../../themeContext';
 import getStyles from './style';
@@ -23,42 +24,50 @@ export default function Cadastro4({ navigation }) {
 
   // Câmera
   const abrirCamera = async () => {
-    const { status } = await ImagePicker.requestCameraPermissionsAsync();
-    if (status !== 'granted') {
-      Alert.alert('Permissão negada', 'Precisamos acessar a câmera');
-      return;
-    }
+    try {
+      const { status } = await ImagePicker.requestCameraPermissionsAsync();
+      if (status !== 'granted') {
+        Alert.alert('Permissão negada', 'Precisamos acessar a câmera');
+        return;
+      }
 
-    const result = await ImagePicker.launchCameraAsync({
-      allowsEditing: true,
-      aspect: [1, 1],
-      quality: 0.7,
-    });
+      const result = await ImagePicker.launchCameraAsync({
+        allowsEditing: true,
+        aspect: [1, 1],
+        quality: 0.7,
+      });
 
-    if (!result.canceled && result.assets?.length) {
-      setImagem(result.assets[0]);
+      if (!result.canceled && result.assets?.length) {
+        setImagem(result.assets[0]);
+      }
+      setModalVisible(false);
+    } catch {
+      Alert.alert('Recurso indisponível', 'Não foi possível selecionar a foto. Tente outro método ou continue sem foto.');
     }
-    setModalVisible(false);
   };
 
   // Galeria
   const abrirGaleria = async () => {
-    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (status !== 'granted') {
-      Alert.alert('Permissão negada', 'Precisamos acessar a galeria');
-      return;
-    }
+    try {
+      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status !== 'granted') {
+        Alert.alert('Permissão negada', 'Precisamos acessar a galeria');
+        return;
+      }
 
-    const result = await ImagePicker.launchImageLibraryAsync({
-      allowsEditing: true,
-      aspect: [1, 1],
-      quality: 0.7,
-    });
+      const result = await ImagePicker.launchImageLibraryAsync({
+        allowsEditing: true,
+        aspect: [1, 1],
+        quality: 0.7,
+      });
 
-    if (!result.canceled && result.assets?.length) {
-      setImagem(result.assets[0]);
+      if (!result.canceled && result.assets?.length) {
+        setImagem(result.assets[0]);
+      }
+      setModalVisible(false);
+    } catch {
+      Alert.alert('Recurso indisponível', 'Não foi possível selecionar a foto. Tente outro método ou continue sem foto.');
     }
-    setModalVisible(false);
   };
 
   const finalizarCadastro = async () => {
@@ -79,7 +88,7 @@ export default function Cadastro4({ navigation }) {
 
         // CORREÇÃO: Use updateFotoPerfil corretamente
         await updateFotoPerfil(imagem.uri);
-        
+
         Alert.alert('Sucesso', 'Cadastro finalizado com foto!');
       } else {
         Alert.alert('Sucesso', 'Cadastro finalizado sem foto!');
@@ -87,7 +96,7 @@ export default function Cadastro4({ navigation }) {
 
       // Limpa os dados do contexto de cadastro
       limparDados();
-      
+
       // Navega para login
       navigation.reset({
         index: 0,
@@ -96,20 +105,20 @@ export default function Cadastro4({ navigation }) {
 
     } catch (error) {
       console.error('❌ Erro ao salvar foto:', error);
-      
+
       // Se deu erro na foto mas o cadastro já foi feito, permite continuar
       Alert.alert(
-        'Aviso', 
+        'Aviso',
         error.response?.data?.error || 'Foto não pôde ser salva, mas o cadastro foi finalizado. Você pode adicionar a foto depois.',
-        [{ 
-          text: 'OK', 
+        [{
+          text: 'OK',
           onPress: () => {
             limparDados();
             navigation.reset({
               index: 0,
               routes: [{ name: 'Login' }],
             });
-          } 
+          }
         }]
       );
     } finally {
@@ -136,12 +145,12 @@ export default function Cadastro4({ navigation }) {
             {imagem ? (
               <View style={styles.fotoComContainer}>
                 <Image source={{ uri: imagem.uri }} style={styles.fotoSelecionada} />
-                <TouchableOpacity style={styles.botaoRemoverFoto} onPress={removerFoto}>
+                <TouchableOpacity accessibilityRole="button" style={styles.botaoRemoverFoto} accessibilityLabel="Remover foto selecionada" onPress={removerFoto}>
                   <Ionicons name="close-circle" size={24} color="#FF3B30" />
                 </TouchableOpacity>
               </View>
             ) : (
-              <TouchableOpacity onPress={selecionarImagem}>
+              <TouchableOpacity accessibilityRole="button" onPress={selecionarImagem}>
                 <LinearGradient
                   colors={isDarkMode ? ['#444', '#555'] : ['#999', '#aaa']}
                   style={styles.fotoPlaceholder}
@@ -154,13 +163,13 @@ export default function Cadastro4({ navigation }) {
           </View>
 
           <Text style={styles.observacao}>
-            {imagem 
-              ? 'Foto selecionada! Toque na foto para alterar.' 
+            {imagem
+              ? 'Foto selecionada! Toque na foto para alterar.'
               : 'Toque no círculo acima para adicionar uma foto (opcional).'
             }
           </Text>
 
-          <TouchableOpacity
+          <TouchableOpacity accessibilityRole="button"
             onPress={finalizarCadastro}
             disabled={loading}
             style={[styles.botoes, loading && { opacity: 0.7 }]}
@@ -176,7 +185,7 @@ export default function Cadastro4({ navigation }) {
             </LinearGradient>
           </TouchableOpacity>
 
-          <TouchableOpacity
+          <TouchableOpacity accessibilityRole="button"
             style={[styles.botoes, { marginTop: 10 }]}
             onPress={() => navigation.goBack()}
             disabled={loading}
@@ -200,18 +209,18 @@ export default function Cadastro4({ navigation }) {
           <View style={styles.modalContainer}>
             <View style={styles.modalContent}>
               <Text style={styles.modalTitle}>Escolher Foto</Text>
-              
-              <TouchableOpacity style={styles.modalOption} onPress={abrirCamera}>
+
+              <TouchableOpacity accessibilityRole="button" style={styles.modalOption} onPress={abrirCamera}>
                 <Ionicons name="camera" size={24} color="#6247AA" />
                 <Text style={styles.modalOptionText}>Tirar Foto</Text>
               </TouchableOpacity>
-              
-              <TouchableOpacity style={styles.modalOption} onPress={abrirGaleria}>
+
+              <TouchableOpacity accessibilityRole="button" style={styles.modalOption} onPress={abrirGaleria}>
                 <Ionicons name="images" size={24} color="#6247AA" />
                 <Text style={styles.modalOptionText}>Escolher da Galeria</Text>
               </TouchableOpacity>
-              
-              <TouchableOpacity style={styles.modalCancel} onPress={() => setModalVisible(false)}>
+
+              <TouchableOpacity accessibilityRole="button" style={styles.modalCancel} onPress={() => setModalVisible(false)}>
                 <Text style={styles.modalCancelText}>Cancelar</Text>
               </TouchableOpacity>
             </View>

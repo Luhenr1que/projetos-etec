@@ -1,0 +1,24 @@
+{
+  "missing": [
+    "assets/adaptive-icon.png",
+    "assets/favicon.png",
+    "assets/icon.png",
+    "assets/img/aquario.png",
+    "assets/img/ares.png",
+    "assets/img/cancer.png",
+    "assets/img/capricornio.png",
+    "assets/img/escorpiao.png",
+    "assets/img/gemeos.png",
+    "assets/img/horos.png",
+    "assets/img/leao.png",
+    "assets/img/libra.png",
+    "assets/img/peixes.png",
+    "assets/img/sargitario.png",
+    "assets/img/touro.png",
+    "assets/img/virgem.png",
+    "assets/splash-icon.png"
+  ],
+  "count": 17,
+  "build": "failed: Unable to resolve ./assets/img/ares.png",
+  "pickerVersion": "2.9.0"
+}

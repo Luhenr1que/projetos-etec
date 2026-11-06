@@ -1,0 +1,46 @@
+
+> pitaia@1.0.0 build:web
+> expo export --platform web --max-workers 2
+
+
+Using (experimental) base path: /demos/horoscopo
+Starting Metro Bundler
+| (node:16310) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:16311) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Web Bundling failed 2830ms index.js (129 modules)
+Error: Unable to resolve module ./assets/img/ares.png from /Users/noweb/Desktop/PAM/horoscupo/App.js: 
+
+None of these files exist:
+  * ares.png
+  * assets/img/ares.png
+[0m [90m 18 |[39m         nome[33m:[39m[32m'Áries'[39m[33m,[39m
+ [90m 19 |[39m         dias[33m:[39m[32m'21 de março a 19 de abril'[39m[33m,[39m
+[31m[1m>[22m[39m[90m 20 |[39m         imagem[33m:[39m[33m<[39m[33mImage[39m style[33m=[39m{styles[33m.[39mimageM} source[33m=[39m{require([32m'./assets/img/ares.png'[39m)}[33m>[39m[33m<[39m[33m/[39m[33mImage[39m[33m>[39m[33m,[39m
+ [90m    |[39m                                                              [31m[1m^[22m[39m
+ [90m 21 |[39m         cor[33m:[39m[32m'Vermelho - Representa paixão, energia e força.'[39m[33m,[39m
+ [90m 22 |[39m         elemento[33m:[39m[32m'Elemento Fogo (Energia, ação, entusiasmo)'[39m[33m,[39m
+ [90m 23 |[39m     }[33m,[39m[0m
+Error: Unable to resolve module ./assets/img/ares.png from /Users/noweb/Desktop/PAM/horoscupo/App.js: 
+
+None of these files exist:
+  * ares.png
+  * assets/img/ares.png
+[0m [90m 18 |[39m         nome[33m:[39m[32m'Áries'[39m[33m,[39m
+ [90m 19 |[39m         dias[33m:[39m[32m'21 de março a 19 de abril'[39m[33m,[39m
+[31m[1m>[22m[39m[90m 20 |[39m         imagem[33m:[39m[33m<[39m[33mImage[39m style[33m=[39m{styles[33m.[39mimageM} source[33m=[39m{require([32m'./assets/img/ares.png'[39m)}[33m>[39m[33m<[39m[33m/[39m[33mImage[39m[33m>[39m[33m,[39m
+ [90m    |[39m                                                              [31m[1m^[22m[39m
+ [90m 21 |[39m         cor[33m:[39m[32m'Vermelho - Representa paixão, energia e força.'[39m[33m,[39m
+ [90m 22 |[39m         elemento[33m:[39m[32m'Elemento Fogo (Energia, ação, entusiasmo)'[39m[33m,[39m
+ [90m 23 |[39m     }[33m,[39m[0m
+    at ModuleResolver.resolveDependency (/Users/noweb/Desktop/PAM/horoscupo/node_modules/metro/src/node-haste/DependencyGraph/ModuleResolution.js:114:15)
+    at DependencyGraph.resolveDependency (/Users/noweb/Desktop/PAM/horoscupo/node_modules/metro/src/node-haste/DependencyGraph.js:248:43)
+    at /Users/noweb/Desktop/PAM/horoscupo/node_modules/metro/src/lib/transformHelpers.js:165:21
+    at resolveDependencies (/Users/noweb/Desktop/PAM/horoscupo/node_modules/metro/src/DeltaBundler/buildSubgraph.js:42:25)
+    at visit (/Users/noweb/Desktop/PAM/horoscupo/node_modules/metro/src/DeltaBundler/buildSubgraph.js:83:30)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Promise.all (index 2)
+    at visit (/Users/noweb/Desktop/PAM/horoscupo/node_modules/metro/src/DeltaBundler/buildSubgraph.js:92:5)
+    at async Promise.all (index 0)
+    at buildSubgraph (/Users/noweb/Desktop/PAM/horoscupo/node_modules/metro/src/DeltaBundler/buildSubgraph.js:103:3)

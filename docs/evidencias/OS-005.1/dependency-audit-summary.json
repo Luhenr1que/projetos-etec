@@ -1,0 +1,223 @@
+{
+  "command": "npm audit --json --package-lock-only",
+  "results": [
+    {
+      "app": "termo",
+      "counts": {
+        "info": 0,
+        "low": 4,
+        "moderate": 9,
+        "high": 18,
+        "critical": 2,
+        "total": 33
+      },
+      "error": null,
+      "directFindings": [
+        {
+          "package": "@babel/core",
+          "severity": "low",
+          "fixAvailable": true
+        },
+        {
+          "package": "expo",
+          "severity": "moderate",
+          "fixAvailable": {
+            "name": "expo",
+            "version": "57.0.32",
+            "isSemVerMajor": true
+          }
+        }
+      ]
+    },
+    {
+      "app": "agenda",
+      "counts": {
+        "info": 0,
+        "low": 5,
+        "moderate": 8,
+        "high": 18,
+        "critical": 2,
+        "total": 33
+      },
+      "error": null,
+      "directFindings": [
+        {
+          "package": "@babel/core",
+          "severity": "low",
+          "fixAvailable": true
+        },
+        {
+          "package": "expo",
+          "severity": "moderate",
+          "fixAvailable": {
+            "name": "expo",
+            "version": "57.0.32",
+            "isSemVerMajor": true
+          }
+        }
+      ]
+    },
+    {
+      "app": "zookids",
+      "counts": {
+        "info": 0,
+        "low": 7,
+        "moderate": 16,
+        "high": 21,
+        "critical": 5,
+        "total": 49
+      },
+      "error": null,
+      "directFindings": [
+        {
+          "package": "@babel/core",
+          "severity": "low",
+          "fixAvailable": true
+        },
+        {
+          "package": "@react-native-community/cli",
+          "severity": "critical",
+          "fixAvailable": {
+            "name": "@react-native-community/cli",
+            "version": "20.2.0"
+          }
+        },
+        {
+          "package": "expo",
+          "severity": "moderate",
+          "fixAvailable": {
+            "name": "expo",
+            "version": "57.0.32",
+            "isSemVerMajor": true
+          }
+        },
+        {
+          "package": "expo-updates",
+          "severity": "moderate",
+          "fixAvailable": {
+            "name": "expo-updates",
+            "version": "58.0.21",
+            "isSemVerMajor": true
+          }
+        }
+      ]
+    },
+    {
+      "app": "medlive",
+      "counts": {
+        "info": 0,
+        "low": 6,
+        "moderate": 8,
+        "high": 24,
+        "critical": 2,
+        "total": 40
+      },
+      "error": null,
+      "directFindings": [
+        {
+          "package": "@babel/core",
+          "severity": "low",
+          "fixAvailable": true
+        },
+        {
+          "package": "axios",
+          "severity": "high",
+          "fixAvailable": true
+        },
+        {
+          "package": "expo",
+          "severity": "moderate",
+          "fixAvailable": {
+            "name": "expo",
+            "version": "57.0.32",
+            "isSemVerMajor": true
+          }
+        }
+      ]
+    },
+    {
+      "app": "template",
+      "counts": {
+        "info": 0,
+        "low": 6,
+        "moderate": 10,
+        "high": 19,
+        "critical": 2,
+        "total": 37
+      },
+      "error": null,
+      "directFindings": [
+        {
+          "package": "@babel/core",
+          "severity": "low",
+          "fixAvailable": true
+        },
+        {
+          "package": "expo",
+          "severity": "moderate",
+          "fixAvailable": {
+            "name": "expo",
+            "version": "57.0.32",
+            "isSemVerMajor": true
+          }
+        },
+        {
+          "package": "expo-constants",
+          "severity": "low",
+          "fixAvailable": {
+            "name": "expo-constants",
+            "version": "58.0.15",
+            "isSemVerMajor": true
+          }
+        },
+        {
+          "package": "expo-linking",
+          "severity": "low",
+          "fixAvailable": {
+            "name": "expo-linking",
+            "version": "58.0.16",
+            "isSemVerMajor": true
+          }
+        },
+        {
+          "package": "expo-splash-screen",
+          "severity": "low",
+          "fixAvailable": {
+            "name": "expo-splash-screen",
+            "version": "58.0.13",
+            "isSemVerMajor": true
+          }
+        }
+      ]
+    },
+    {
+      "app": "horoscopo",
+      "counts": {
+        "info": 0,
+        "low": 6,
+        "moderate": 11,
+        "high": 21,
+        "critical": 3,
+        "total": 41
+      },
+      "error": null,
+      "directFindings": [
+        {
+          "package": "@babel/core",
+          "severity": "low",
+          "fixAvailable": true
+        },
+        {
+          "package": "expo",
+          "severity": "high",
+          "fixAvailable": {
+            "name": "expo",
+            "version": "57.0.32",
+            "isSemVerMajor": true
+          }
+        }
+      ]
+    }
+  ],
+  "scope": "Árvore completa de dependências; não equivale a código efetivamente incluído no bundle web."
+}

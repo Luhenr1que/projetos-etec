@@ -1,8 +1,9 @@
+import linking from './linking';
 
 import React, { useState, useEffect }  from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { AudioProvider } from './audioContext.js';
+import { AudioProvider } from './audioContext';
 import * as Font from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 
@@ -39,7 +40,7 @@ export default function App() {
   return (
     <AudioProvider>
 
-        <NavigationContainer>
+        <NavigationContainer linking={linking}>
         <StatusBar 
           hidden={true}
         />

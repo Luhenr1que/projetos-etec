@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import * as Animatable from 'react-native-animatable';
 import { useState, useEffect } from 'react';
 import styles from './style.js';
-import { useAudio } from '../../../../audioContext.js';
+import { useAudio } from '../../../../audioContext';
 
 export default function Inicio (){
 
@@ -37,16 +37,16 @@ useEffect(() => {
                 <View style={styles.space2}></View>
                 <Animatable.View style={styles.botArea}>
                     <Animatable.View animation={animaD}>
-                        <Pressable onPress={() => navigate('Entrar')}>
+                        <Pressable accessibilityRole="button" accessibilityLabel="Entrar" onPress={() => navigate('Entrar')}>
                         <Image style={styles.botImg} source={require('../../../../assets/img/incio/first/entrar.png')}/>
                         </Pressable>
                     </Animatable.View>
                     <Animatable.View animation={animaE}> 
-                        <Pressable onPress={() => navigate('Cadastrar')}>
+                        <Pressable accessibilityRole="button" accessibilityLabel="Cadastrar" onPress={() => navigate('Cadastrar')}>
                             <Image style={styles.botImg} source={require('../../../../assets/img/incio/first/cadastrar.png')}/>
                         </Pressable>
                     </Animatable.View>
-                    <Pressable style={styles.V} onPress={mutar}>
+                    <Pressable accessibilityRole="button" style={styles.V} accessibilityLabel="Ativar ou silenciar áudio" onPress={mutar}>
                             <Image style={styles.VImg} source={mutado ? require('../../../../assets/img/home/botV0.png') : require('../../../../assets/img/home/botV1.png')}/>
                     </Pressable>
                     

@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-11-06T19:03:53.652Z",
+  "results": [
+    {
+      "route": "/demos/medlive/receitas",
+      "status": "failed",
+      "errors": [],
+      "failure": "locator.waitFor: Timeout 6000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Sua Saúde', { exact: true }) to be visible\u001b[22m\n"
+    },
+    {
+      "route": "/demos/medlive/mapa",
+      "status": "failed",
+      "errors": [],
+      "failure": "locator.waitFor: Timeout 6000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Sua Saúde', { exact: true }) to be visible\u001b[22m\n"
+    },
+    {
+      "route": "/demos/medlive/meditacao",
+      "status": "passed",
+      "errors": []
+    }
+  ]
+}

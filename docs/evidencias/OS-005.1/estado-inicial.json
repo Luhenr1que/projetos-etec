@@ -1,0 +1,383 @@
+{
+  "date": "2026-11-06",
+  "branch": "main",
+  "head": "d5afc640eb2fa99b90174e5720a62db2c948b53a",
+  "changes": [
+    {
+      "path": ".gitignore",
+      "sha256": "b4bc45a8849a20fb0f07fa16f118f118c7c9a90af05f8e692ed9125fde0fb6c5"
+    },
+    {
+      "path": "Agenda/app.config.js",
+      "sha256": "96bbfc0c8be254f87b1e1aa173950fb286959dacd35bd884a44e0f181cde4b3d"
+    },
+    {
+      "path": "Agenda/app.json",
+      "sha256": "66673434900eedff812d700fb7444ddf848cea86bfd7487c6bd00addcac67c8d"
+    },
+    {
+      "path": "Agenda/package.json",
+      "sha256": "a4c2ce83ff1e688e465fff46fd714418ba788722de2201a0c81ad59c0d2784a3"
+    },
+    {
+      "path": "Agenda/public/index.html",
+      "sha256": "9d8a4eb20f258ce1908083aa1cc13969ff27e46c20255bca225b3c3085c505aa"
+    },
+    {
+      "path": "Agenda/src/home/index.js",
+      "sha256": "cdc8acf0bc675b37d1f4c25bfbc9674ad0496924156dc5842f6dd47d8a1eb2ed"
+    },
+    {
+      "path": "Agenda/src/login/cadastro/index.js",
+      "sha256": "0ab67a833ad0d189792f02b996d8d1d19e889817973bf313f0ba16249e7a14bb"
+    },
+    {
+      "path": "Agenda/src/login/inicio/index.js",
+      "sha256": "ed20154156ab37cb625e77b1dc9dc12fe59ba26723c2d9094645f53c90f28d0c"
+    },
+    {
+      "path": "Agenda/src/splach/index.js",
+      "sha256": "71c950e64e909ae98ccd7a2f0115c8889240c070f18b03ad593e2fa7f42270c9"
+    },
+    {
+      "path": "Agenda/storage.js",
+      "sha256": "81d04433d59d3c7515e0bcb0497c81d0770797260b009d668895ed54c367415c"
+    },
+    {
+      "path": "Agenda/storage.web.js",
+      "sha256": "017a4191673fd1f8ca7f06c12a6935ea944884fb1287fe52b16272656f924776"
+    },
+    {
+      "path": "MedLive/app.config.js",
+      "sha256": "96bbfc0c8be254f87b1e1aa173950fb286959dacd35bd884a44e0f181cde4b3d"
+    },
+    {
+      "path": "MedLive/app.json",
+      "sha256": "ac1d57613b0e528618cac6061d1397d4fd00f0eda0ebec2e0655cdc21ba96e37"
+    },
+    {
+      "path": "MedLive/package-lock.json",
+      "sha256": "e5ae0e4156868ff2767ccd82c6cafa333303a101b488d0c911d8e8216905ad69"
+    },
+    {
+      "path": "MedLive/package.json",
+      "sha256": "00ba615740a1423e2616ade582c00a14d317c5ffe43f89c88166cd4e8889e9e0"
+    },
+    {
+      "path": "MedLive/public/index.html",
+      "sha256": "0bd64e8126187a4b13d475c0e3dc05d0e42e10eba32a603e1e80a351fb748a88"
+    },
+    {
+      "path": "ZooKids/App.js",
+      "sha256": "38acfd2c4fcff3b4f35f133982db6b63167353791d21c4c1995caca3062de8a3"
+    },
+    {
+      "path": "ZooKids/app.config.js",
+      "sha256": "96bbfc0c8be254f87b1e1aa173950fb286959dacd35bd884a44e0f181cde4b3d"
+    },
+    {
+      "path": "ZooKids/app.json",
+      "sha256": "23634deffc1125a03802a2480dbf78a04a5705f74ae2a6ff99d8dafbbf3ef3de"
+    },
+    {
+      "path": "ZooKids/audioContext.web.js",
+      "sha256": "6c2e193bdd410607aa0e88ae58dd37302c3ef002922e58468de9e338e4509223"
+    },
+    {
+      "path": "ZooKids/package.json",
+      "sha256": "6f277eb7a9481273126f41f057859e59f021ea22d01169b82c0bec3b6f2bb417"
+    },
+    {
+      "path": "ZooKids/public/index.html",
+      "sha256": "289ef468f8dee5677e920769ffcbfa4d98219a3f5ae3cba9ab4d165b46dd38b6"
+    },
+    {
+      "path": "ZooKids/src/pages/home/index.js",
+      "sha256": "33797bda28cba4b0d5c0aa0bee1b8467e961cded2cb750d7df97278bd98e79f4"
+    },
+    {
+      "path": "ZooKids/src/pages/login/cadastar/index.js",
+      "sha256": "049f222143a490c587ff56b3798c018f12cdfa035a3b4f4cea8d2c0caaeca060"
+    },
+    {
+      "path": "ZooKids/src/pages/login/entrar/index.js",
+      "sha256": "5e4370d68360ce635989095959ce1079147827bdb971c917e6f3b9bc4ed582cf"
+    },
+    {
+      "path": "ZooKids/src/pages/login/inicio/index.js",
+      "sha256": "ebfc995d4829140530268fe7d298b9a14751949d50ec9e5c34d67618174ab9c2"
+    },
+    {
+      "path": "ZooKids/src/pages/splach/index.js",
+      "sha256": "c20c00d33d6850178cfb975c1f6bd4b8f6f097d1efc96528e676c6d661de63af"
+    },
+    {
+      "path": "ZooKids/src/pages/territorios/1/index.js",
+      "sha256": "99c1e3de118cefbfaac839659e9cf728c825b6733570f0390492895eb8ef59de"
+    },
+    {
+      "path": "ZooKids/src/pages/territorios/2/avesPantanalDetalhe.js",
+      "sha256": "1b4280bb4dd7284fa5ccd227ae61a369496bb26581c861b354e9dcaf41e87494"
+    },
+    {
+      "path": "ZooKids/src/pages/territorios/2/avesPantanalDetalhe.web.js",
+      "sha256": "b14bd09b94b6e2ab946373144a9b76b2ea84ffa27689c05d2634fe480486b3ba"
+    },
+    {
+      "path": "ZooKids/src/pages/territorios/2/index.js",
+      "sha256": "a752da4e5ffbdfb75ec5b614231c61e663768dc2cc8441a83702978c21016a9f"
+    },
+    {
+      "path": "ZooKids/src/pages/territorios/3/index.js",
+      "sha256": "602808de42de64de18b60d32bf131974a64faa379d58494fe126453110e7e56b"
+    },
+    {
+      "path": "ZooKids/src/pages/territorios/4/index.js",
+      "sha256": "1579bd8cd3d83e6b71734686a1a1d1d691fb95a7804442b1e350880248acf0b7"
+    },
+    {
+      "path": "ZooKids/src/pages/territorios/5/index.js",
+      "sha256": "11639496d6f62d746334dd4cb6c35e9fea2f69a123986c8eca0c64602e0d29d3"
+    },
+    {
+      "path": "ZooKids/src/pages/territorios/6/index.js",
+      "sha256": "9f2340bb90fa4a7df248eec6d1544777066b95da59d627c94886b3f094b1d182"
+    },
+    {
+      "path": "ZooKids/storage.js",
+      "sha256": "81d04433d59d3c7515e0bcb0497c81d0770797260b009d668895ed54c367415c"
+    },
+    {
+      "path": "ZooKids/storage.web.js",
+      "sha256": "d64f51bb1781e889c4e3d5bf9f852bd3b4171efb710a41f8d41741a0ca87982d"
+    },
+    {
+      "path": "docs/OS-005-AUDITORIA.md",
+      "sha256": "831da7ce91f1a5e902ae8b5fed824a853acc91516e721bbc2d82b2cac1e775e7"
+    },
+    {
+      "path": "docs/OS-005-DEPLOY.md",
+      "sha256": "f278b7a5d96d0e1c74a33a5761be57807fa1f44eec2cb1b63e072959b1bac9a8"
+    },
+    {
+      "path": "docs/OS-005-MIGRACAO.md",
+      "sha256": "6b3bc5e82f03be1f3385f381f73a08d2a68f691a4c1b86844d7607cdb50bdb75"
+    },
+    {
+      "path": "docs/OS-005-RELATORIO-FINAL.md",
+      "sha256": "6fed942e6523ec8958a3122e14eb1a70c9fecb07a8a59a01a9c66274d983d450"
+    },
+    {
+      "path": "docs/OS-005-TESTES.md",
+      "sha256": "e83523adf7867474fe54eb1a11f6cb45f241766018a9071044d313c29292178d"
+    },
+    {
+      "path": "docs/evidencias/agenda-desktop.png",
+      "sha256": "4350edf4cac89471fb462d7686cc305bbfc4c7ea9c5fcc5026b31043880045f4"
+    },
+    {
+      "path": "docs/evidencias/agenda-mobile.png",
+      "sha256": "0a7a2795032bd779123cdc20bf7cffef3af9d074add6c9755d4c5f21a2835bbc"
+    },
+    {
+      "path": "docs/evidencias/arquivos-modificados.txt",
+      "sha256": "2f3c78144c60983f71f1ff9596a38fb44f6c375b1d35188cc32402f0eacdaca7"
+    },
+    {
+      "path": "docs/evidencias/build-results.json",
+      "sha256": "da2be289259ee2ea8a9ced6b1c34c1d24f3de98f16257af478c0d9f16219c472"
+    },
+    {
+      "path": "docs/evidencias/bundle-audit.json",
+      "sha256": "3938a48a8948e1ce3bdeac669f2ed5b6cfd47076bc153827e18e24d1a6d75aa3"
+    },
+    {
+      "path": "docs/evidencias/medlive-desktop.png",
+      "sha256": "df6fb071b48fbb5b641780631f0640f6c12d510e9f6036356c6f233695b61eb9"
+    },
+    {
+      "path": "docs/evidencias/medlive-mobile.png",
+      "sha256": "9d53bcb42e9d28e52080ffe948159ffe7ee8864fd6fa69f9bc4ca1a8b36cf62d"
+    },
+    {
+      "path": "docs/evidencias/template-desktop.png",
+      "sha256": "706031a399a45ec1198775c2c4498c933912a3683dbc08572973df44a4ed4fd3"
+    },
+    {
+      "path": "docs/evidencias/template-mobile.png",
+      "sha256": "ee70e76a25185ee225bd9370f216f83724aee695ed2d0a5cc414ecd92cd2cab6"
+    },
+    {
+      "path": "docs/evidencias/termo-desktop.png",
+      "sha256": "cceb6a5e5316299f49f39da88e6b1349eebfbb8e4d745243e8c5ffb31b1cdfc3"
+    },
+    {
+      "path": "docs/evidencias/termo-mobile.png",
+      "sha256": "0062f87118c0eb6dd5617cc3d081aa49db21b366536ba701581e3cb22a11913e"
+    },
+    {
+      "path": "docs/evidencias/web-results-initial.json",
+      "sha256": "0cbe2c2fafbd2b781f8eaa22a13653962230f02ea6bba2219cb7f1218b7bb41e"
+    },
+    {
+      "path": "docs/evidencias/web-results.json",
+      "sha256": "5e3162e0664623e2e2e54f2c1d6e9d0fb3ed58511eccd9fae64d8e6bd0210670"
+    },
+    {
+      "path": "docs/evidencias/zookids-desktop.png",
+      "sha256": "7c7e14ebf82fe5c3c8800fb2b2ea299c5737e890533c93ad8b4650ba0f757144"
+    },
+    {
+      "path": "docs/evidencias/zookids-mobile.png",
+      "sha256": "d7b1c6544c4c5a9e77895abdd3dc4a5284a15a3e4fa6e14eb688d07d7d29ced5"
+    },
+    {
+      "path": "medLiveProjeto/medLive/.env.example",
+      "sha256": "f212792dc8b6da784d4a3dee8d88269a6e6fb9dad1a08614b98cd71f7ec6db5b"
+    },
+    {
+      "path": "medLiveProjeto/medLive/addressLookup.js",
+      "sha256": "fcfcd8cbb1dbc84dfb7b8898b4dd6d428f903b2c7be98b40e0f1e3d9f859dc2b"
+    },
+    {
+      "path": "medLiveProjeto/medLive/addressLookup.web.js",
+      "sha256": "1e51abf47aa440949379c0f74a0ca7bc8c98196b88a5833ef2850fa42df6d896"
+    },
+    {
+      "path": "medLiveProjeto/medLive/alerts.js",
+      "sha256": "329751efbf53cbffa6e7057dd64c7749580de0d6c6eea6ebd540c2b5f8a18ad0"
+    },
+    {
+      "path": "medLiveProjeto/medLive/alerts.web.js",
+      "sha256": "55e5665a2bd8a293d9f136a5abc116fd6cdf5be683d2504cc42a3e57cd608232"
+    },
+    {
+      "path": "medLiveProjeto/medLive/app.config.js",
+      "sha256": "0f06ed4a7714d290cd4a001b6ddf3ee73a36034a4cb62a8f3fa96bcec7bcf99a"
+    },
+    {
+      "path": "medLiveProjeto/medLive/app.json",
+      "sha256": "1d08e05de213647d9810c61db382a119ea3396a6d2fc3333443114073fa44f04"
+    },
+    {
+      "path": "medLiveProjeto/medLive/audioContext.web.js",
+      "sha256": "7f243126bc3d0b8164eca879ed85658d2eb0f9af8c03baf8e1bf7a9837cc0703"
+    },
+    {
+      "path": "medLiveProjeto/medLive/crud.web.js",
+      "sha256": "e66de0800eb61e8db2f6cab514552954cbe2ef458a98b79dda102485db0cafb5"
+    },
+    {
+      "path": "medLiveProjeto/medLive/demoHttp.js",
+      "sha256": "fc2ff4226e7d85afa3189d636b7d32de64f06277db84bd962903c5ac0290cd37"
+    },
+    {
+      "path": "medLiveProjeto/medLive/demoHttp.web.js",
+      "sha256": "8ddcb3880cc1cbdacd90850f835d64ac620ad3fcafde9fa7fbcd43720b11081f"
+    },
+    {
+      "path": "medLiveProjeto/medLive/demoMode.js",
+      "sha256": "de6e43b16be757c56f34dbb5cb14910356d0cd7136bc9dccb4f9745948631790"
+    },
+    {
+      "path": "medLiveProjeto/medLive/demoMode.web.js",
+      "sha256": "0e9f3d4c13b94d986de7f0f5daa9bfb48d8c1fbae2fe85b839fdd2a0ece056e8"
+    },
+    {
+      "path": "medLiveProjeto/medLive/package-lock.json",
+      "sha256": "820017e12fd6e3f979292d37d825925ee0e806ed9935ab03a8514e32895ada1b"
+    },
+    {
+      "path": "medLiveProjeto/medLive/package.json",
+      "sha256": "5b421309c61c6fc3966bfb85a8258f86642396c506134139b7cfeaff725d334c"
+    },
+    {
+      "path": "medLiveProjeto/medLive/profilePhoto.js",
+      "sha256": "1acb7f3ffbb0994f9b7b286f5206282326f06ea21593947649062d57baca4848"
+    },
+    {
+      "path": "medLiveProjeto/medLive/profilePhoto.web.js",
+      "sha256": "3c6ea88dcfeddebb13b87609699a175075a7fb6cd8b83870ab81a61f1780d2b4"
+    },
+    {
+      "path": "medLiveProjeto/medLive/public/index.html",
+      "sha256": "d7c154e882f254873e97f262f59f63077aa63b562f3222c6c921d9a41a985541"
+    },
+    {
+      "path": "medLiveProjeto/medLive/src/inicio/views/cadastro/cadastro.js",
+      "sha256": "c0cbe56a18456403494c909a1249ed7bf93323a8ac41ff31ea14c843d7c592a3"
+    },
+    {
+      "path": "medLiveProjeto/medLive/src/inicio/views/cadastro/etapa2.js",
+      "sha256": "d556cb439ba706e050acf4f1a1d2266d9daf5e317029b89c7f2752b8804ac32f"
+    },
+    {
+      "path": "medLiveProjeto/medLive/src/inicio/views/cadastro/etapa3.js",
+      "sha256": "1c2799ea3eeb3f8f9c67de8d3a75d16b2c5ac42d8f9d2351a919289a673bac36"
+    },
+    {
+      "path": "medLiveProjeto/medLive/src/inicio/views/cadastro/etapa4.js",
+      "sha256": "e6454b50fe2a69fdd1165b5a4aa567a0ce28ec604df612070e04f3ca04ece11a"
+    },
+    {
+      "path": "medLiveProjeto/medLive/src/inicio/views/login/login.js",
+      "sha256": "9e48b00d4968c5c7d0352142c6198da9b819dcfe4d63769d8e4cf5781cfceba2"
+    },
+    {
+      "path": "medLiveProjeto/medLive/src/principal/alimentacao/alimentacao.js",
+      "sha256": "1adc620421a1fb1254127b8f0a6f7e2836c6a513579b8566d9c78943d1b4face"
+    },
+    {
+      "path": "medLiveProjeto/medLive/src/principal/home/home.js",
+      "sha256": "2c51c2f26c3e070d4a8d7173d197102818378cf8fce95c85102c4ff705564689"
+    },
+    {
+      "path": "medLiveProjeto/medLive/src/principal/mapa/mapa.js",
+      "sha256": "6ac498a384bc9ba787a41c3015051ece1f1548166a292b9b5c5af233c58ee9d5"
+    },
+    {
+      "path": "medLiveProjeto/medLive/src/principal/mapa/mapa.web.js",
+      "sha256": "0614fa9221ab502e010815807f494c2531cab52f2044dcc45cab180129cd50e2"
+    },
+    {
+      "path": "medLiveProjeto/medLive/src/principal/meditação/meditacao.js",
+      "sha256": "a8a38366766e11e1f1ffbbe197966d04b17ff26868d29b2edb7bdbc59ca8b434"
+    },
+    {
+      "path": "scripts/audit-web.py",
+      "sha256": "2d260a8296178f04286072664f8ae5bcaacfa53e04e309df1c92f0097c7e3a4a"
+    },
+    {
+      "path": "scripts/preview-web.py",
+      "sha256": "58d4e5807ed5d62381a698787e8e9629874d2eacb65ddef3a1989b98cc033c8c"
+    },
+    {
+      "path": "termo/App.js",
+      "sha256": "1d3df8eba299ffc9655c469fbc80def4206c32d93eefc35a290735568f56d71c"
+    },
+    {
+      "path": "termo/app.config.js",
+      "sha256": "96bbfc0c8be254f87b1e1aa173950fb286959dacd35bd884a44e0f181cde4b3d"
+    },
+    {
+      "path": "termo/app.json",
+      "sha256": "a6d61d0487bee84972ef2c126086f31bd374fc2d01c90914c9d2418bc707ce0a"
+    },
+    {
+      "path": "termo/package.json",
+      "sha256": "ff32dd4d6222bbf70bdf12202b381779e28390e55e22e3d1577b63f270d04795"
+    },
+    {
+      "path": "termo/public/index.html",
+      "sha256": "06f19ced10aef0ed6c199ebd66cff0c87bf0f7a37785abccc5faf53cba7218c8"
+    },
+    {
+      "path": "termo/style.js",
+      "sha256": "5cd05fa69e68fe3697de9cf37139329cfc6bfa1fb6bf4dfc9ebc2743d902216d"
+    },
+    {
+      "path": "tests/os005-web.cjs",
+      "sha256": "bfa8540ef7062bb2b822978a3ec83569ca95f50b57dfd3c5d339e6ce1f3b133c"
+    }
+  ]
+}

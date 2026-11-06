@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 
 // Sua chave da API Google Places
-const GOOGLE_API_KEY = 'AIzaSyCAckKLHl-T6HPk2pTVfxrjHXf4yLojpfw';
+const GOOGLE_API_KEY = process.env.EXPO_PUBLIC_GOOGLE_PLACES_API_KEY || '';
 
 function calcularDistancia(lat1, lon1, lat2, lon2) {
   const R = 6371;
@@ -106,7 +106,7 @@ export default function MapaMercados() {
 
       {/* HEADER PERSONALIZADO */}
       <View style={styles.header}>
-        <TouchableOpacity 
+        <TouchableOpacity accessibilityRole="button"
           style={styles.btnVoltar} 
           onPress={() => navigation.goBack()}
         >
@@ -168,7 +168,7 @@ export default function MapaMercados() {
             { valor: 5000, label: '5km' },
             { valor: 10000, label: '10km' }
           ].map(({ valor, label }) => (
-            <TouchableOpacity 
+            <TouchableOpacity accessibilityRole="button"
               key={valor} 
               onPress={() => setRaio(valor)}
               style={[
@@ -215,7 +215,7 @@ export default function MapaMercados() {
             keyExtractor={(i) => i.id.toString()}
             showsVerticalScrollIndicator={false}
             renderItem={({ item }) => (
-              <TouchableOpacity 
+              <TouchableOpacity accessibilityRole="button"
                 style={styles.item} 
                 onPress={() => abrirRota(item)}
               >

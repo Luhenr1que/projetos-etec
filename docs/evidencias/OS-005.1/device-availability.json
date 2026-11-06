@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-06",
+  "android": {
+    "adbAvailable": true,
+    "connectedDevices": 0,
+    "configuredAvds": 0,
+    "commands": [
+      "adb devices -l",
+      "emulator -list-avds"
+    ],
+    "status": "unavailable"
+  },
+  "ios": {
+    "command": "xcrun --find simctl",
+    "simctlAvailable": false,
+    "status": "unavailable"
+  },
+  "note": "Primeira consulta ADB e emulator no sandbox falhou; repetição com acesso local autorizado confirmou nenhum device/AVD. Nenhum teste de dispositivo executado."
+}

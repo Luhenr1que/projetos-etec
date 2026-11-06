@@ -1,3 +1,5 @@
+import { isDemo } from '../../../demoMode';
+import { Alert } from '../../../alerts';
 import React, { useState, useEffect } from 'react';
 import {
   View,
@@ -5,7 +7,6 @@ import {
   TextInput,
   FlatList,
   ActivityIndicator,
-  Alert,
   Image,
   Pressable,
   Dimensions,
@@ -18,7 +19,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme } from '../../../themeContext';
 import getStyles from './style';
 import { Ionicons } from '@expo/vector-icons';
-import axios from 'axios';
+import axios from '../../../demoHttp';
 
 const { width } = Dimensions.get('window');
 
@@ -232,14 +233,14 @@ export default function Alimentacao({ navigation }) {
   };
 
   const renderItem = ({ item }) => (
-    <Pressable
+    <Pressable accessibilityRole="button"
       style={({ pressed }) => [styles.cardAlimento, pressed && styles.cardPressed]}
       onPress={() => fetchRecipeDetails(item)}
     >
       <View style={styles.cardHeader}>
         {item.image ? (
           <Image
-            source={{ uri: item.image }}
+            source={item.image ? { uri: item.image } : undefined}
             style={styles.imagemAlimento}
             resizeMode="cover"
           />
@@ -292,7 +293,7 @@ export default function Alimentacao({ navigation }) {
       <View style={styles.cardFooter}>
         <Text style={styles.infoPorcao}>
           {item.ingredients ? `Ingredientes: ${formatarIngredientes(item.ingredients).length}` : ''} 
-          • Fonte: TheMealDB
+          • Fonte: {isDemo ? 'Exemplo fictício' : 'TheMealDB'}
         </Text>
       </View>
     </Pressable>
@@ -305,9 +306,9 @@ export default function Alimentacao({ navigation }) {
     >
       {/* Header */}
       <View style={styles.header}>
-        <Pressable
+        <Pressable accessibilityRole="button"
           style={({ pressed }) => [styles.backButton, pressed && styles.buttonPressed]}
-          onPress={() => navigation.goBack()}
+          accessibilityLabel="Voltar" onPress={() => navigation.goBack()}
         >
           <Ionicons name="arrow-back" size={24} color="#FFFFFF" />
         </Pressable>
@@ -330,7 +331,7 @@ export default function Alimentacao({ navigation }) {
             returnKeyType="search"
           />
           {searchTerm.length > 0 && (
-            <Pressable
+            <Pressable accessibilityRole="button"
               style={({ pressed }) => [styles.clearButton, pressed && styles.buttonPressed]}
               onPress={() => setSearchTerm('')}
             >
@@ -339,7 +340,7 @@ export default function Alimentacao({ navigation }) {
           )}
         </View>
 
-        <Pressable
+        <Pressable accessibilityRole="button"
           style={({ pressed }) => [styles.searchButton, pressed && styles.buttonPressed]}
           onPress={handleSearch}
           disabled={carregando}
@@ -388,7 +389,7 @@ export default function Alimentacao({ navigation }) {
             ListHeaderComponent={
               receitas.length > 0 && (
                 <Text style={styles.resultadosText}>
-                  {receitas.length} receita(s) encontrada(s) via TheMealDB
+                  {receitas.length} receita(s) encontrada(s) — {isDemo ? 'dados fictícios' : 'via TheMealDB'}
                 </Text>
               )
             }
@@ -429,7 +430,7 @@ export default function Alimentacao({ navigation }) {
                   <Text style={styles.modalTitle} numberOfLines={2}>
                     {recipeDetails.title || "Receita sem nome"}
                   </Text>
-                  <Pressable
+                  <Pressable accessibilityRole="button"
                     style={styles.closeButton}
                     onPress={() => setModalVisible(false)}
                   >
@@ -439,7 +440,7 @@ export default function Alimentacao({ navigation }) {
 
                 {recipeDetails.image && (
                   <Image
-                    source={{ uri: recipeDetails.image }}
+                    source={recipeDetails.image ? { uri: recipeDetails.image } : undefined}
                     style={styles.modalImage}
                     resizeMode="cover"
                   />
@@ -513,7 +514,7 @@ export default function Alimentacao({ navigation }) {
                 {/* Botões de ação */}
                 <View style={styles.actionsContainer}>
                   {recipeDetails.video && (
-                    <Pressable
+                    <Pressable accessibilityRole="button"
                       style={[styles.actionButton, styles.videoButton]}
                       onPress={() => abrirVideo(recipeDetails.video)}
                     >
@@ -523,7 +524,7 @@ export default function Alimentacao({ navigation }) {
                   )}
                   
                   {recipeDetails.source && (
-                    <Pressable
+                    <Pressable accessibilityRole="button"
                       style={[styles.actionButton, styles.sourceButton]}
                       onPress={() => abrirFonte(recipeDetails.source)}
                     >
@@ -535,7 +536,7 @@ export default function Alimentacao({ navigation }) {
 
                 <View style={styles.dataSourceInfo}>
                   <Text style={styles.dataSourceText}>
-                    🍳 Receita fornecida pela TheMealDB API
+                    🍳 {isDemo ? 'Receita fictícia da demonstração' : 'Receita fornecida pela TheMealDB API'}
                   </Text>
                 </View>
               </ScrollView>
@@ -544,7 +545,7 @@ export default function Alimentacao({ navigation }) {
                 <Text style={styles.errorText}>
                   Erro ao carregar informações da receita.
                 </Text>
-                <Pressable
+                <Pressable accessibilityRole="button"
                   style={styles.retryButton}
                   onPress={() => setModalVisible(false)}
                 >

@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { Modal } from "react-native-web";
 
 export default StyleSheet.create({
 
@@ -17,13 +16,13 @@ export default StyleSheet.create({
     },
     titu:{
         fontSize: 30,
-        fontWeight: '1000',
+        fontWeight: '900',
         color:'#fff',
     },
     campos:{
         flex:1,
         display: 'flex',
-        flexDirection: 'collum',
+        flexDirection: 'column',
         padding:15,
         backgroundColor: '#450b1e'
     },
@@ -45,7 +44,7 @@ export default StyleSheet.create({
     },
     teclado:{
         display:'flex',
-        flexDirection: 'collum',
+        flexDirection: 'column',
         flex:0.5,
         backgroundColor: '#450b1e'
     },

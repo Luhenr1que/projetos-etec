@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-06",
+  "results": [
+    {
+      "app": "termo",
+      "web": {
+        "command": "npm run build:web",
+        "status": "passed",
+        "artifact": "termo/dist/index.html"
+      },
+      "android": {
+        "command": "npx expo export --platform android --output-dir dist-native",
+        "status": "passed",
+        "note": "Export de bundle e assets; não é teste de dispositivo."
+      }
+    },
+    {
+      "app": "Agenda",
+      "web": {
+        "command": "npm run build:web",
+        "status": "passed",
+        "artifact": "Agenda/dist/index.html"
+      },
+      "android": {
+        "command": "npx expo export --platform android --output-dir dist-native",
+        "status": "passed",
+        "note": "Export de bundle e assets; não é teste de dispositivo."
+      }
+    },
+    {
+      "app": "ZooKids",
+      "web": {
+        "command": "npm run build:web",
+        "status": "passed",
+        "artifact": "ZooKids/dist/index.html"
+      },
+      "android": {
+        "command": "npx expo export --platform android --output-dir dist-native",
+        "status": "failed",
+        "note": "Asset original avesPantanalR.png corrompido; build mobile bloqueada."
+      }
+    },
+    {
+      "app": "MedLive",
+      "web": {
+        "command": "npm run build:web",
+        "status": "passed",
+        "artifact": "MedLive/dist/index.html"
+      },
+      "android": {
+        "command": "npx expo export --platform android --output-dir dist-native",
+        "status": "passed",
+        "note": "Export de bundle e assets; não é teste de dispositivo."
+      }
+    },
+    {
+      "app": "medLiveProjeto/medLive",
+      "web": {
+        "command": "npm run build:web",
+        "status": "passed",
+        "artifact": "medLiveProjeto/medLive/dist/index.html"
+      },
+      "android": {
+        "command": "npx expo export --platform android --output-dir dist-native",
+        "status": "passed",
+        "note": "Export de bundle e assets; não é teste de dispositivo."
+      }
+    }
+  ]
+}

@@ -4,8 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import * as Animatable from 'react-native-animatable';
 import { useState, useEffect } from 'react';
 import styles from './style.js';
-import { useAudio } from '../../../../audioContext.js';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useAudio } from '../../../../audioContext';
+import AsyncStorage from '../../../../storage';
 
 
 export default function Cadastrar (){
@@ -121,7 +121,7 @@ export default function Cadastrar (){
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <KeyboardAvoidingView style={{ flex: 1 }} >
         <ImageBackground source={require('../../../../assets/img/incio/cadastrar/back.png')} style={styles.container}>
-            <Pressable style={styles.botBack} onPress={()=> go("Inicio")}><Image style={styles.botBackImg} source={require('../../../../assets/img/incio/cadastrar/botBack.png')}/></Pressable>
+            <Pressable accessibilityRole="button" style={styles.botBack} onPress={()=> go("Inicio")}><Image style={styles.botBackImg} source={require('../../../../assets/img/incio/cadastrar/botBack.png')}/></Pressable>
             <Animatable.View style={styles.box}>
                 <Animatable.View style={styles.textArea}>
                 <Text style={styles.textL}>Email:</Text>
@@ -133,13 +133,13 @@ export default function Cadastrar (){
                 </Animatable.View>
                     <View style={[styles.text,styles.senhaContainer]}>
                         <TextInput style={[styles.senhaInput, {borderColor: borda}]} placeholder="Digite sua senha" placeholderTextColor="rgba(0, 0, 0, 0.3)" minLength={8} secureTextEntry={!senhaVisivel} onChangeText={(text) => cad("senha", text)} />
-                        <Pressable onPress={() => setSenhaVisivel(!senhaVisivel)} style={styles.olhoBotao}><Image source={senhaVisivel ? require('../../../../assets/img/incio/naoVer.png') : require('../../../../assets/img/incio/ver.png')} style={styles.olhoIcone}/></Pressable>
+                        <Pressable accessibilityRole="button" onPress={() => setSenhaVisivel(!senhaVisivel)} style={styles.olhoBotao}><Image source={senhaVisivel ? require('../../../../assets/img/incio/naoVer.png') : require('../../../../assets/img/incio/ver.png')} style={styles.olhoIcone}/></Pressable>
                     </View>
-                <Pressable onPress={()=> go("Home")}><Image style={styles.bot} source={require('../../../../assets/img/incio/cadastrar/cont.png')}/></Pressable>
+                <Pressable accessibilityRole="button" accessibilityLabel="Confirmar login" onPress={()=> go("Home")}><Image style={styles.bot} source={require('../../../../assets/img/incio/cadastrar/cont.png')}/></Pressable>
             </Animatable.View>
 
                 <Modal animationType='fade' visible={mAviso} transparent={true} style={styles.modal}>
-                    <Pressable onPress={()=>modal()} style={styles.modal}>
+                    <Pressable accessibilityRole="button" onPress={()=>modal()} style={styles.modal}>
                         <View style={styles.boxM}>
                             <Text style={styles.aviso}>{aviso}</Text>    
                         </View>

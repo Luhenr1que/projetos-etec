@@ -1,0 +1,7 @@
+{
+  "test": "Agenda e ZooKids no mesmo origin e contexto de navegador",
+  "status": "passed",
+  "errors": [],
+  "agendaPreserved": true,
+  "zooReset": true
+}

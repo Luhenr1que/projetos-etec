@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "path": "/",
+      "status": 302
+    },
+    {
+      "path": "/demos/termo/",
+      "status": 200
+    },
+    {
+      "path": "/demos/termo/_expo/static/js/web/index-d13f9afdbc8a7c15b2256573b259d531.js",
+      "status": 200
+    },
+    {
+      "path": "/demos/termo/rota-local",
+      "status": 200
+    },
+    {
+      "path": "/demos/termo/assets/missing.png",
+      "status": 404
+    },
+    {
+      "path": "/demos/termo/_expo/missing",
+      "status": 404
+    },
+    {
+      "path": "/assets/missing.png",
+      "status": 404
+    }
+  ]
+}

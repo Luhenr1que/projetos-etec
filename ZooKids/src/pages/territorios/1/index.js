@@ -4,7 +4,7 @@ import styles from './style.js';
 import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
 import { useState, useEffect } from 'react';
-import { useAudio } from '../../../../audioContext.js';
+import { useAudio } from '../../../../audioContext';
 export default function Terri1 (){
     const navigation = useNavigation();
 
@@ -117,7 +117,7 @@ const animal = [
     return(
         <View style={styles.container}>
                 <Animatable.View useNativeDriver={true} animation={animaT} duration={700} style={styles.tituloArea}>
-                    <Pressable onPress={()=>volta("Home")}><Image style={styles.menuB} source={require('../../../../assets/img/t1/menuB.png')}/></Pressable>
+                    <Pressable accessibilityRole="button" accessibilityLabel="Voltar ao início" onPress={()=>volta("Home")}><Image style={styles.menuB} source={require('../../../../assets/img/t1/menuB.png')}/></Pressable>
                     <Image style={styles.titulo} source={require('../../../../assets/img/t1/titulo.png')}/>
                 </Animatable.View>
                 <ImageBackground style={styles.botArea} resizeMode='cover' source={require('../../../../assets/img/t1/back.png')}>
@@ -126,7 +126,7 @@ const animal = [
                     renderItem = {({item,index}) => {
                       const anima = index % 2 === 0 ? animaL : animaR;
                       return (
-                        <Animatable.View useNativeDriver={true} initial={false} animation={anima} duration={800} delay={index*100} style = {styles.bot}><Pressable onPress={() => puxa(index)}><Image style={styles.botao} source={item.imagem}/></Pressable></Animatable.View>
+                        <Animatable.View useNativeDriver={true} initial={false} animation={anima} duration={800} delay={index*100} style = {styles.bot}><Pressable accessibilityRole="button" accessibilityLabel={`Ver ${item.nome}`} onPress={() => puxa(index)}><Image style={styles.botao} source={item.imagem}/></Pressable></Animatable.View>
                         )}}
                     keyExtractor={item => item.nome}
                     showsVerticalScrollIndicator={false}
@@ -157,7 +157,7 @@ const animal = [
                             </View>
                           </ScrollView>
                           </View>
-                            <Pressable onPress={() => volta("T") }><Animatable.View animation={animaVol} duration={800} ><Image style={styles.botaoModal} source={require('../../../../assets/img/t1/volta.png')}/></Animatable.View></Pressable>
+                            <Pressable accessibilityRole="button" onPress={() => volta("T") }><Animatable.View animation={animaVol} duration={800} ><Image style={styles.botaoModal} source={require('../../../../assets/img/t1/volta.png')}/></Animatable.View></Pressable>
                         </ImageBackground>
                     </Modal>
             <StatusBar style="auto"/>

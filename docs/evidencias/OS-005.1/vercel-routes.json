@@ -1,0 +1,7 @@
+{
+  "tool": "@vercel/routing-utils@6.6.1",
+  "checks": 41,
+  "status": "passed",
+  "error": null,
+  "scope": "Validação local de sintaxe e matching. Não é deploy nem emulação completa da Vercel."
+}

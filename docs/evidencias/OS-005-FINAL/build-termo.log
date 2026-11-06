@@ -1,0 +1,18 @@
+
+> termo@1.0.0 build:web
+> expo export --platform web --max-workers 2
+
+
+Using (experimental) base path: /demos/termo
+Starting Metro Bundler
+Web Bundled 97ms index.js (1 module)
+
+› web bundles (1):
+_expo/static/js/web/index-d13f9afdbc8a7c15b2256573b259d531.js (338 kB)
+
+› Files (3):
+favicon.ico (14.5 kB)
+index.html (1.18 kB)
+metadata.json (49 B)
+
+Exported: dist

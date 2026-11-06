@@ -4,8 +4,8 @@ import styles from './style.js';
 import { useNavigation } from '@react-navigation/native';
 import { useState, useEffect } from 'react';
 import * as Animatable from 'react-native-animatable';
-import { useAudio } from '../../../audioContext.js';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useAudio } from '../../../audioContext';
+import AsyncStorage from '../../../storage';
 
 
 export default function Home (){
@@ -30,7 +30,7 @@ export default function Home (){
             try {
                 const userSalvo = await AsyncStorage.getItem('usuarios');
                 const usuarios = userSalvo ? JSON.parse(userSalvo) : [];
-                
+
                 if (usuarios.length > 0) {
                     setUsuario(usuarios[0]);
                 }
@@ -62,23 +62,23 @@ export default function Home (){
     const modal = (objetivo) => {
         playSomBot();
         setTimeout( async ()=>{
-            
+
             switch (objetivo){
-                case "desaparecer": 
+                case "desaparecer":
                     setAnimaM("fadeOutLeft")
                     setTimeout(()=>{
                         setOptionM(false)
                     },300)
                     break;
 
-                case "desaparecerS": 
+                case "desaparecerS":
                     setOptionS(false)
                     break;
 
-                case "desaparecerC": 
+                case "desaparecerC":
                     setOptionC(false)
                     break;
-    
+
                 case "conta":
                     setOptionC(true);
                     setOptionM(false);
@@ -93,7 +93,7 @@ export default function Home (){
                     navigation.navigate('Inicio')
                     setOptionM(false)
                     break;
-                
+
                 case "map":
                     openMaps();
                     setOptionM(false)
@@ -102,9 +102,10 @@ export default function Home (){
                     ingre();
                     setOptionM(false)
                     break;
-                
+
                 case "fecha":
-                    BackHandler.exitApp();
+                    if (Platform.OS === 'web') navigation.navigate('Inicio');
+                    else BackHandler.exitApp();
                     break;
             }
         },150)
@@ -118,9 +119,10 @@ export default function Home (){
         const label = 'Zoológico de São Paulo'
 
         const url = Platform.select({
-            android: `geo:0,0?q=${latitude},${longitude}(${label})` 
+            android: `geo:0,0?q=${latitude},${longitude}(${label})`,
+            default: `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`
         })
-        
+
         Linking.openURL(url)
     }
 
@@ -149,75 +151,75 @@ export default function Home (){
         <ImageBackground source={require('../../../assets/img/home/back.png')} resizeMode='cover' style={styles.container}>
             <ImageBackground style={styles.titulo} resizeMode='cover' source={require('../../../assets/img/home/proxPa.png')}>
             <View style={styles.bot}>
-                    <Pressable onPress={() => {aparecer()}}><View><Image style={styles.menuBot} source={require('../../../assets/img/home/menu.png')}/></View></Pressable>
+                    <Pressable accessibilityRole="button" accessibilityLabel="Abrir menu" onPress={() => {aparecer()}}><View><Image style={styles.menuBot} source={require('../../../assets/img/home/menu.png')}/></View></Pressable>
             </View>
             </ImageBackground>
             <View style={styles.botaoArea} >
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Pressable onPress={ () => territorio('Terri1')}>
+                <Pressable accessibilityRole="button" accessibilityLabel="Território 1" onPress={ () => territorio('Terri1')}>
                 <Animatable.View useNativeDriver={true} animation={animaD} duration={200}><Image style={styles.botao} source={require('../../../assets/img/home/t1.png')}></Image></Animatable.View>
                 </Pressable>
-                <Pressable onPress={ () => territorio('Terri2')}>
+                <Pressable accessibilityRole="button" accessibilityLabel="Território 2" onPress={ () => territorio('Terri2')}>
                 <Animatable.View useNativeDriver={true} animation={animaE} duration={400}><Image style={styles.botao} source={require('../../../assets/img/home/t2.png')}></Image></Animatable.View>
                 </Pressable>
-                <Pressable onPress={ () => territorio('Terri3')}>
+                <Pressable accessibilityRole="button" accessibilityLabel="Território 3" onPress={ () => territorio('Terri3')}>
                 <Animatable.View useNativeDriver={true} animation={animaD} duration={600}><Image style={styles.botao} source={require('../../../assets/img/home/t3.png')}></Image></Animatable.View>
                 </Pressable>
-                <Pressable onPress={ () => territorio('Terri4')}>
+                <Pressable accessibilityRole="button" accessibilityLabel="Território 4" onPress={ () => territorio('Terri4')}>
                 <Animatable.View useNativeDriver={true} animation={animaE} duration={800}><Image style={styles.botao} source={require('../../../assets/img/home/t4.png')}></Image></Animatable.View>
                 </Pressable>
-                <Pressable onPress={ () => territorio('Terri5')}>
+                <Pressable accessibilityRole="button" accessibilityLabel="Território 5" onPress={ () => territorio('Terri5')}>
                 <Animatable.View useNativeDriver={true} animation={animaD} duration={1000}><Image style={styles.botao} source={require('../../../assets/img/home/t5.png')}></Image></Animatable.View>
                 </Pressable>
-                <Pressable onPress={ () => territorio('Terri6')}>
+                <Pressable accessibilityRole="button" accessibilityLabel="Território 6" onPress={ () => territorio('Terri6')}>
                 <Animatable.View useNativeDriver={true} animation={animaE} duration={1200}><Image style={styles.botao} source={require('../../../assets/img/home/t6.png')}></Image></Animatable.View>
                 </Pressable>
             </ScrollView>
-                
+
                 <Modal animationType='fade' visible={optionM} transparent={invi} style={styles.modal}>
-                        <Pressable onPress={()=>{modal("desaparecer")}} style={styles.modal}>
+                        <Pressable accessibilityRole="button" onPress={()=>{modal("desaparecer")}} style={styles.modal}>
                         <View style={styles.box}>
-                            <Pressable onPress={ () => modal("conta")}>
+                            <Pressable accessibilityRole="button" onPress={ () => modal("conta")}>
                                 <Animatable.View animation={animaM} duration={300} delay={M*100} style={styles.boxTextView}>
                                     <Text style={styles.boxText}>Conta</Text>
                                 </Animatable.View>
                             </Pressable>
-                            <Pressable onPress={ () => modal("sobre")}>
+                            <Pressable accessibilityRole="button" onPress={ () => modal("sobre")}>
                                 <Animatable.View animation={animaM} duration={300} delay={M+1*100} style={styles.boxTextView}>
                                     <Text style={styles.boxText}>Sobre</Text>
                                 </Animatable.View>
                             </Pressable>
 
-                            <Pressable onPress={()=>modal("map")}>
+                            <Pressable accessibilityRole="button" onPress={()=>modal("map")}>
                                 <Animatable.View animation={animaM} duration={300} delay={M+2*100} style={styles.boxTextView}>
                                     <Text style={styles.boxText}>Local</Text>
                                 </Animatable.View>
                             </Pressable>
 
-                            <Pressable onPress={()=>modal("ingresso")}>
+                            <Pressable accessibilityRole="button" onPress={()=>modal("ingresso")}>
                                 <Animatable.View animation={animaM} duration={300} delay={M+3*100} style={styles.boxTextView}>
                                     <Text style={styles.boxText}>Ingresso</Text>
                                 </Animatable.View>
                             </Pressable>
 
-                            <Pressable onPress={()=>modal("logout")}>
-                                <Animatable.View animation={animaM} duration={300} delay={M+4*100} style={styles.boxTextView}>                                
+                            <Pressable accessibilityRole="button" onPress={()=>modal("logout")}>
+                                <Animatable.View animation={animaM} duration={300} delay={M+4*100} style={styles.boxTextView}>
                                     <Text style={styles.boxText}>Logout</Text>
                                 </Animatable.View>
                             </Pressable>
-                            <Pressable onPress={()=>{modal("fecha")}}>
+                            <Pressable accessibilityRole="button" onPress={()=>{modal("fecha")}}>
                                 <Animatable.View animation={animaM} duration={300} delay={M+6*100} style={styles.boxTextView}>
                                     <Text style={styles.boxText}>Fechar</Text>
                                 </Animatable.View>
                             </Pressable>
                         </View>
-                        <Pressable style={styles.V} onPress={mutar}>
+                        <Pressable accessibilityRole="button" style={styles.V} onPress={mutar}>
                             <Image style={styles.VImg} source={mutado ? require('../../../assets/img/home/botV0.png') : require('../../../assets/img/home/botV1.png')}/>
                         </Pressable>
                         </Pressable>
                 </Modal>
                     <Modal animationType='fade' visible={optionS} transparent={invi} style={styles.modal}>
-                        <Pressable onPress={()=>{modal("desaparecerS")}} style={styles.modal}>
+                        <Pressable accessibilityRole="button" onPress={()=>{modal("desaparecerS")}} style={styles.modal}>
                             <View style={styles.BoxS}>
                                 <Pressable>
 
@@ -233,7 +235,7 @@ export default function Home (){
                     </Modal>
 
                     <Modal animationType='fade' visible={optionC} transparent={invi} style={styles.modal}>
-                        <Pressable onPress={()=>{modal("desaparecerC")}} style={styles.modal}>
+                        <Pressable accessibilityRole="button" onPress={()=>{modal("desaparecerC")}} style={styles.modal}>
                             <View style={styles.BoxC}>
                                 <Pressable>
                                         <View style={{ alignItems: 'center'}}>

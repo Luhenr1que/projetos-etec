@@ -1,5 +1,6 @@
+import { Alert } from '../../../../alerts';
 import React, { useState, useRef } from 'react';
-import { View, ScrollView, TextInput, Text, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';
+import { View, ScrollView, TextInput, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme } from '../../../../themeContext';
 import getStyles from './style';
@@ -121,7 +122,7 @@ export default function Cadastro3({ navigation }) {
             <Text style={styles.label}>Tipo Sanguíneo</Text>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginVertical: 10 }}>
               {tiposSanguineos.map(tipo => (
-                <TouchableOpacity
+                <TouchableOpacity accessibilityRole="button"
                   key={tipo}
                   onPress={() => cad('tipoSanguineo', tipo)}
                   style={[
@@ -139,7 +140,7 @@ export default function Cadastro3({ navigation }) {
           </View>
 
           {/* Botão Finalizar */}
-          <TouchableOpacity onPress={finalizarCadastro} disabled={loading}>
+          <TouchableOpacity accessibilityRole="button" onPress={finalizarCadastro} disabled={loading}>
             <LinearGradient colors={['#6247AA', '#856BCC']} style={[styles.botoes, loading && { opacity: 0.7 }]}>
               {loading ? <ActivityIndicator color="#fff" /> : <Text style={styles.textBtn}>Finalizar Cadastro</Text>}
             </LinearGradient>

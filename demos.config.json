@@ -1,0 +1,47 @@
+{
+  "apps": [
+    {
+      "id": "termo",
+      "directory": "termo",
+      "basePath": "/demos/termo",
+      "public": true,
+      "buildable": true
+    },
+    {
+      "id": "agenda",
+      "directory": "Agenda",
+      "basePath": "/demos/agenda",
+      "public": true,
+      "buildable": true
+    },
+    {
+      "id": "zookids",
+      "directory": "ZooKids",
+      "basePath": "/demos/zookids",
+      "public": true,
+      "buildable": true
+    },
+    {
+      "id": "medlive",
+      "directory": "medLiveProjeto/medLive",
+      "basePath": "/demos/medlive",
+      "public": true,
+      "buildable": true
+    },
+    {
+      "id": "horoscopo",
+      "directory": "horoscupo",
+      "basePath": "/demos/horoscopo",
+      "public": true,
+      "buildable": true
+    },
+    {
+      "id": "medlive-template",
+      "directory": "MedLive",
+      "basePath": "/_preservacao/medlive-template",
+      "public": false,
+      "buildable": true
+    }
+  ],
+  "outputDirectory": "artifacts/os005-final"
+}

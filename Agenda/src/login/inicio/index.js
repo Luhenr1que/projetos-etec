@@ -16,7 +16,7 @@ export default function Inicio (){
 return(
       <View style={styles.container} sresizeMode='cover' source={require('../../../assets/img/back.png')}>
             <Image style={styles.logo} source={require('../../../assets/img/bmg.png')} />
-            <Pressable onPress={() => go('Cadastro')} style={styles.botao}>
+            <Pressable accessibilityRole="button" onPress={() => go('Cadastro')} style={styles.botao}>
                   <Text style={styles.botaoT}>
                         Cadastre-se
                   </Text>

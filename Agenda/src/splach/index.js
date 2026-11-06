@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, ActivityIndicator, StyleSheet,Image } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '../../storage';
 
 export default function Splash({ navigation }) {
   const [isLoading, setIsLoading] = useState(true);

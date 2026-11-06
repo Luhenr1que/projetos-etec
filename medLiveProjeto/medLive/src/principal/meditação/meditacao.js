@@ -185,9 +185,9 @@ export default function Meditacao({ navigation }) {
         >
             {/* Header com botão de voltar */}
             <View style={styles.header}>
-                <TouchableOpacity
+                <TouchableOpacity accessibilityRole="button"
                     style={styles.backButton}
-                    onPress={handleBackPress}
+                    accessibilityLabel="Voltar" onPress={handleBackPress}
                 >
                     <Ionicons name="arrow-back" size={24} color="white" />
                 </TouchableOpacity>
@@ -205,7 +205,7 @@ export default function Meditacao({ navigation }) {
                     <View style={styles.musicSection}>
                         <View style={styles.musicGrid}>
                             {musicPlay.map((music, index) => (
-                                <TouchableOpacity
+                                <TouchableOpacity accessibilityRole="button"
                                     key={index}
                                     style={[
                                         styles.musicButton,
@@ -262,7 +262,7 @@ export default function Meditacao({ navigation }) {
                             <Text style={styles.modalMessage}>{currentMessage}</Text>
 
                             <View style={styles.modalButtons}>
-                                <TouchableOpacity
+                                <TouchableOpacity accessibilityRole="button"
                                     style={[
                                         styles.modalButton,
                                         !isPlaying && styles.modalButtonDisabled
@@ -274,7 +274,7 @@ export default function Meditacao({ navigation }) {
                                     <Text style={styles.modalButtonText}>Parar</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity
+                                <TouchableOpacity accessibilityRole="button"
                                     style={styles.modalButton}
                                     onPress={closeModal}
                                 >

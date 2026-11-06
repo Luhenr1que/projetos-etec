@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-11-06T19:07:45.488Z",
+  "results": [
+    {
+      "app": "medlive",
+      "viewport": "mobile",
+      "status": "passed",
+      "basePath": "/demos/medlive",
+      "errors": [],
+      "externalRequests": [],
+      "wrongPaths": [],
+      "failedResponses": []
+    },
+    {
+      "app": "medlive",
+      "viewport": "desktop",
+      "status": "passed",
+      "basePath": "/demos/medlive",
+      "errors": [],
+      "externalRequests": [],
+      "wrongPaths": [],
+      "failedResponses": []
+    }
+  ]
+}

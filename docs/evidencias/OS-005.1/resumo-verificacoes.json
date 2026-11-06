@@ -1,0 +1,18 @@
+{
+  "web-results.json": {
+    "passed": 10,
+    "total": 10
+  },
+  "web-medlive-final.json": {
+    "passed": 2,
+    "total": 2
+  },
+  "deep-links.json": {
+    "passed": 3,
+    "total": 3
+  },
+  "isolation": "passed",
+  "legacySuitePreserved": true,
+  "headUnchanged": true,
+  "preexistingFilesDeleted": []
+}

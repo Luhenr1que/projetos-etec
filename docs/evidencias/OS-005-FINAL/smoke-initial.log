@@ -1,0 +1,22 @@
+failed: chromium/mobile/portfolio
+locator.getAttribute: Timeout 18000ms exceeded.
+Call log:
+[2m  - waiting for locator('#grupo-demais article').filter({ has: getByRole('heading', { name: 'Termo Numérico', exact: true }) }).getByRole('link', { name: /Testar aplicativo/ })[22m
+
+    at /Users/noweb/Desktop/PAM/tests/os005-final.cjs:63:236
+failed: chromium/mobile/termo
+locator.click: Timeout 18000ms exceeded.
+Call log:
+[2m  - waiting for locator('#grupo-demais article').filter({ has: getByRole('heading', { name: 'Termo Numérico', exact: true }) }).getByRole('link', { name: /Testar aplicativo/ })[22m
+
+    at /Users/noweb/Desktop/PAM/tests/os005-final.cjs:80:109
+node:internal/process/promises:394
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+browserContext.waitForEvent: Timeout 30000ms exceeded while waiting for event "page"
+    at /Users/noweb/Desktop/PAM/tests/os005-final.cjs:80:29 {
+  name: 'TimeoutError'
+}
+
+Node.js v22.18.0

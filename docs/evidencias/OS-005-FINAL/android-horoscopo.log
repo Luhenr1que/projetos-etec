@@ -1,0 +1,31 @@
+
+Using (experimental) base path: /demos/horoscopo
+Starting Metro Bundler
+| (node:35977) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+| (node:35978) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+| (Use `node --trace-warnings ...` to show where the warning was created)
+Android Bundled 9652ms index.js (570 modules)
+
+› Assets (13):
+assets/img/aquario.png (24.5 kB)
+assets/img/ares.png (25.6 kB)
+assets/img/cancer.png (26.4 kB)
+assets/img/capricornio.png (26.2 kB)
+assets/img/escorpiao.png (24.1 kB)
+assets/img/gemeos.png (23.6 kB)
+assets/img/horos.png (10.8 kB)
+assets/img/leao.png (26.3 kB)
+assets/img/libra.png (23.1 kB)
+assets/img/peixes.png (24.8 kB)
+assets/img/sargitario.png (22 kB)
+assets/img/touro.png (26.5 kB)
+assets/img/virgem.png (25.2 kB)
+
+› android bundles (1):
+_expo/static/js/android/index-3f2f16d094adec3913b566be59235a25.hbc (1.61 MB)
+
+› Files (1):
+metadata.json (968 B)
+
+Exported: dist-native

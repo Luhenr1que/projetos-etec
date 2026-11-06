@@ -1,0 +1,17 @@
+✔ contact: autentica no Laravel e encaminha o formulário sem expor o token (26.859584ms)
+✔ contact: disponibilidade depende da configuração do Laravel e falhas não simulam sucesso (0.897833ms)
+✔ contact: sem token privado bloqueia envio e não chama o backend (0.176916ms)
+✔ contact: falha de rede desativa disponibilidade e responde erro no envio (0.297458ms)
+✔ orcamento: autentica no Laravel e encaminha o formulário sem expor o token (0.471542ms)
+✔ orcamento: disponibilidade depende da configuração do Laravel e falhas não simulam sucesso (0.39225ms)
+✔ orcamento: sem token privado bloqueia envio e não chama o backend (0.093084ms)
+✔ orcamento: falha de rede desativa disponibilidade e responde erro no envio (0.131417ms)
+✔ orcamento: rejeita telefone ausente antes de encaminhar (0.070584ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 101.390084
